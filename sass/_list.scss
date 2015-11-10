@@ -1,0 +1,59 @@
+.list-group {
+    padding-left: 0;
+    list-style: none;
+    margin: 0 0 $list-group-margin-bottom;
+}
+
+.list-group {
+    .item {
+        position: relative;
+        display: block;
+        padding: $list-group-item-padding-top $list-group-item-padding-left;
+        margin-bottom: -$list-group-item-bd-width;
+        background-color: $list-group-item-bg-color;
+        border: $list-group-item-bd-width solid #ddd;
+        & >.badge {
+            float: right;
+            display: inline-block;
+            min-width: 1rem;
+            padding: 0.3rem 0.7rem;
+            font-size: 1.2rem;
+            font-weight: 700;
+            line-height: 1;
+            color: #fff;
+            text-align: center;
+            white-space: nowrap;
+            vertical-align: middle;
+            background-color: $badge-color;
+            border-radius: 10px;
+        }
+        &.active,
+        &.active:focus,
+        &.active:hover {
+            background-color: $primary-color;
+            color:#fff;
+            border-color: $primary-color-border;
+        }
+    }
+    &.radius {
+        .item:first-child {
+            border-top-left-radius: $list-group-bd-radius;
+            border-top-right-radius: $list-group-bd-radius;
+        }
+        .item:last-child {
+            border-bottom-left-radius: $list-group-bd-radius;
+            border-bottom-right-radius: $list-group-bd-radius;
+        }
+    }
+    a.item:focus,
+    a.item:hover,
+    button.item:focus,
+    button.item:hover {
+        color: #555;
+        text-decoration: none;
+        background-color: #f5f5f5;
+    }
+    a {
+        color: #333;
+    }
+}

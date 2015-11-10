@@ -1,0 +1,39 @@
+@mixin well-bg-color($well-bg-color-name, $well-bg-color) {
+    .well.#{$well-bg-color-name} {
+        background-color: $well-bg-color;
+        @if $well-bg-color-name == dark {
+            color: #fff;
+        }
+        @if $well-bg-color-name == primary {
+            color: #fff;
+        }
+    }
+}
+
+@include well-bg-color(warning, $well-bg-color-warning);
+@include well-bg-color(info, $well-bg-color-info);
+@include well-bg-color(dark, $well-bg-color-dark);
+@include well-bg-color(primary, $well-bg-color-primary);
+@include well-bg-color(danger, $well-bg-color-danger);
+@include well-bg-color(success, $well-bg-color-success);
+
+.well {
+    min-height: 1.8rem;
+    padding: $well-padding-default;
+    margin-bottom: $well-margin-bottom;
+    color: $well-color;
+    background-color: $well-bg-color-default;
+    border: 1px solid $well-border-default;
+    border-radius: 0;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
+    &.sm {
+        padding: $well-padding-sm;
+    }
+    &.lg {
+        padding: $well-padding-lg;
+    }
+    &.radius {
+        border-radius: $well-radius;
+    }
+}
+

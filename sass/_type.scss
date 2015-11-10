@@ -1,0 +1,159 @@
+html {
+    font-size: 10px;
+}
+
+@media (max-width:360px) {
+    html {
+        font-size: 9px;
+    }
+}
+
+@media (min-width:361px) and (max-width: 420px) {
+    html {
+        font-size: 10px;
+    }
+}
+
+@media (min-width:421px) {
+    html {
+        font-size: 11px;
+    }
+}
+
+textarea {
+    height: auto;
+    min-height: 50px;
+}
+
+body {
+    background: #fff;
+    color: #333;
+    padding: 0;
+    margin: 0 auto;
+    font-family: "Segoe UI", "Lucida Grande", Helvetica, Arial, "Microsoft YaHei", FreeSans, Arimo, "Droid Sans", "wenquanyi micro hei", "Hiragino Sans GB", "Hiragino Sans GB W3", FontAwesome, sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 140%;
+    line-height: 1.5;
+    position: relative;
+    cursor: auto;
+    max-width: 600px;
+}
+
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+form,
+p,
+blockquote,
+th,
+td {
+    margin: 0;
+    padding: 0;
+}
+
+
+/* Lists */
+
+ul,
+ol,
+dl {
+    font-family: inherit;
+    font-size: 1.4rem;
+    line-height: 1.6;
+    list-style-position: outside;
+    margin-bottom: 1.11111rem;
+}
+
+time {
+    font-size: $time-fontsize;
+    color: $time-color;
+}
+
+a {
+    color: $anchor-font-color;
+    line-height: inherit;
+    font-size: inherit;
+    text-decoration: $anchor-text-decoration;
+    &:hover,
+    &:focus {
+        color: $anchor-font-color-hover;
+    }
+    img {
+        border: none;
+    }
+}
+
+p {
+    font-size: $paragraph-font-size;
+    font-weight: normal;
+    line-height: $paragraph-line-height;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #222;
+    font-family: inherit;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1.4;
+    margin-bottom: 0.6rem;
+    margin-top: 0.3rem;
+    text-rendering: optimizeLegibility;
+}
+
+h1 {
+    font-size: 2.95rem;
+}
+
+h2 {
+    font-size: 2.55rem;
+}
+
+h3 {
+    font-size: 2.15rem;
+}
+
+h4 {
+    font-size: 1.75rem;
+}
+
+h5 {
+    font-size: 1.35rem;
+}
+
+h6 {
+    font-size: 1rem;
+}
+
+hr {
+    border: solid $hr-border-color;
+    border-width: $hr-border-width 0 0;
+    clear: both;
+    height: 0;
+    margin: $hr-margin 0;
+}
+
+label {
+    display: inline-block;
+    max-width: 100%;
+    font-size: 1.5rem;
+    margin-bottom: 0.6rem;
+    font-weight: 700;
+    cursor: default;
+}

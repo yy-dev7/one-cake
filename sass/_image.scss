@@ -1,0 +1,23 @@
+img {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.img-block {
+    display: block;
+    width: 100%;
+}
+
+.img-group {
+    max-width: 100%;
+    margin-bottom: 2rem;
+    img {
+        @extend .img-block;
+        margin-top: 1rem;
+    }
+}
+
+.img-circle {
+    border-radius: 50%;
+    object-fit: cover;
+}

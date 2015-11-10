@@ -1,0 +1,70 @@
+@mixin clearfix {
+    &:before,
+    &:after {
+        content: " ";
+        display: table;
+    }
+    &:after {
+        clear: both;
+    }
+}
+
+@mixin text-align-style($text-align-style) {
+    .text-#{$text-align-style} {
+        text-align: $text-align-style;
+    }
+}
+
+@each $text-align-style-item in center,left,right,justify,nowrap {
+    @include text-align-style($text-align-style-item);
+}
+
+.show {
+    display: block;
+}
+
+.hide {
+    display: none !important;
+}
+
+.opacity {
+    opacity: 0;
+}
+
+.invisible {
+    visibility: hidden;
+}
+
+.left {
+    float: left !important;
+}
+
+.right {
+    float: right !important;
+}
+
+.container {
+    padding-left: 12px;
+    padding-right: 12px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.antialiased {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.center-block {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+a[class="inhref"] {
+    text-decoration: none;
+    color: inherit;
+    &:focus {
+        outline: none;
+    }
+}

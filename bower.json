@@ -1,0 +1,22 @@
+{
+  "name": "cakecss",
+  "version": "0.0.1",
+  "description": "mobile css",
+  "main": "css/cake.css",
+  "authors": [
+    "mervyn"
+  ],
+  "keywords": [
+    "mobile",
+    "css",
+    "cake"
+  ],
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

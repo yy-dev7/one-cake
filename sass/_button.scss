@@ -1,0 +1,202 @@
+@mixin btn-color($bg-color, $bd-color) {
+    background-color: $bg-color;
+    border-color: $bd-color;
+    &.active,
+    &.focus,
+    &:hover,
+    &:active,
+    &:focus {
+        background-color: $bd-color;
+        color: #fff;
+        z-index: 2;
+    }
+}
+
+@mixin btn-size($size) {
+    @if $size==large {
+        padding: $btn-padding-vertical-large $btn-padding-horizontal-large;
+        font-size: $btn-fontsize-large;
+    }
+    @else if $size==sm {
+        padding: $btn-padding-vertical-sm $btn-padding-horizontal-sm;
+        font-size: $btn-fontsize-sm;
+    }
+}
+
+@mixin btn-disabled($btn-name, $btn-color, $btn-color-border) {
+    .btn-#{$btn-name}.disabled,
+    .btn-#{$btn-name}.disabled.active,
+    .btn-#{$btn-name}.disabled.focus,
+    .btn-#{$btn-name}.disabled:active,
+    .btn-#{$btn-name}.disabled:focus,
+    .btn-#{$btn-name}.disabled:hover,
+    .btn-#{$btn-name}[disabled],
+    .btn-#{$btn-name}[disabled].active,
+    .btn-#{$btn-name}[disabled].focus,
+    .btn-#{$btn-name}[disabled]:active,
+    .btn-#{$btn-name}[disabled]:focus,
+    .btn-#{$btn-name}[disabled]:hover,
+    fieldset[disabled] .btn-#{$btn-name},
+    fieldset[disabled] .btn-#{$btn-name}.active,
+    fieldset[disabled] .btn-#{$btn-name}.focus,
+    fieldset[disabled] .btn-#{$btn-name}:active,
+    fieldset[disabled] .btn-#{$btn-name}:focus,
+    fieldset[disabled] .btn-#{$btn-name}:hover {
+        background-color: $btn-color;
+        border-color: $btn-color-border;
+    }
+}
+
+@include btn-disabled(default, $default-color, $default-color-border);
+@include btn-disabled(info, $info-color, $info-color-border);
+@include btn-disabled(primary, $primary-color, $primary-color-border);
+@include btn-disabled(success, $success-color, $success-color-border);
+@include btn-disabled(warning, $warning-color, $warning-color-border);
+@include btn-disabled(danger, $danger-color, $danger-color-border);
+@include btn-disabled(dark, $dark-color, $dark-color-border);
+.btn {
+    -webkit-appearance: none;
+    display: inline-block;
+    border-radius: 0;
+    border-style: solid;
+    border-width: 0;
+    color: #fff;
+    font-weight: normal;
+    line-height: normal;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    padding: $btn-padding-vertical-default $btn-padding-horizontal-default;
+    font-size: $btn-fontsize-default;
+    transition: background-color 300ms ease-out;
+    &:focus {
+        outline: none;
+    }
+    &.round {
+        border-radius: 1000px;
+    }
+    &.border {
+        border-width: 1px;
+    }
+    &.radius {
+        border-radius: $btn-radius;
+    }
+    &.block {
+        display: block;
+        width: 100%;
+    }
+    &.large {
+        @include btn-size(large);
+    }
+    &.sm {
+        @include btn-size(sm);
+    }
+    &.default {
+        @include btn-color($default-color, $default-color-border);
+        color: #333;
+    }
+    &.info {
+        @include btn-color($info-color, $info-color-border);
+    }
+    &.primary {
+        @include btn-color($primary-color, $primary-color-border);
+    }
+    &.success {
+        @include btn-color($success-color, $success-color-border);
+    }
+    &.warning {
+        @include btn-color($warning-color, $warning-color-border);
+    }
+    &.danger {
+        @include btn-color($danger-color, $danger-color-border);
+    }
+    &.dark {
+        @include btn-color($dark-color, $dark-color-border);
+    }
+    &.block + &.block {
+        margin-top: 1.5rem;
+    }
+}
+
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+    &.btn-block {
+        width: 100%;
+    }
+}
+
+/*button group*/
+
+.btn-group {
+    list-style: none;
+    margin: 0 0 1rem;
+    left: 0;
+    @include clearfix();
+}
+
+.btn-group > li {
+    float: left;
+    display: inline-block;
+    margin: 0 -2px;
+    &:first-child {
+        .btn {
+            border-left: 0;
+        }
+    }
+    .btn {
+        border-color: rgba(255, 255, 255, 0.5);
+        border-left: 1px solid;
+    }
+    &.radius > li {
+        &:first-child {
+            .btn {
+                border-bottom-left-radius: $btn-radius;
+                border-top-left-radius: $btn-radius;
+            }
+        }
+        &:last-child {
+            .btn {
+                border-bottom-right-radius: $btn-radius;
+                border-top-right-radius: $btn-radius;
+            }
+        }
+        &.round > li {
+            &:first-child {
+                .btn {
+                    border-bottom-left-radius: 1000px;
+                    border-top-left-radius: 1000px;
+                }
+            }
+            ;
+            &:last-child {
+                .btn {
+                    border-bottom-right-radius: 1000px;
+                    border-top-right-radius: 1000px;
+                }
+            }
+        }
+    }
+}
+
+@for $list from 2 through 4 {
+    .btn-group.list-#{$list} > li {
+        float: left;
+        display: inline-block;
+        margin: 0 !important;
+        width: 100% / $list;
+        .btn {
+            width: 100%;
+        }
+    }
+}
+
+.btn.disabled,
+.btn[disabled],
+fieldset[disabled] .btn {
+    cursor: not-allowed;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    opacity: .65;
+}
