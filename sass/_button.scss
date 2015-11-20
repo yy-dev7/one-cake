@@ -69,7 +69,7 @@
     cursor: pointer;
     padding: $btn-padding-vertical-default $btn-padding-horizontal-default;
     font-size: $btn-fontsize-default;
-    transition: background-color 300ms ease-out;
+    // transition: background-color 300ms ease-out;
     &:focus {
         outline: none;
     }

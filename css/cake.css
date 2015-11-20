@@ -1153,8 +1153,6 @@ fieldset[disabled] .btn-dark:hover {
   cursor: pointer;
   padding: 1rem 2.2rem;
   font-size: 1.5rem;
-  -webkit-transition: background-color 300ms ease-out;
-          transition: background-color 300ms ease-out;
 }
 
 .btn:focus {
