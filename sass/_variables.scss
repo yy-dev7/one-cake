@@ -1,11 +1,19 @@
 // main colors
 $info-color: #4DD4E9;
-$primary-color: #008CBA;
-$success-color: #71D23A;
+$primary-color: rgb(16,108,200);
+$success-color: #02CC0D;
 $warning-color: #F2C049;
-$danger-color: #F15942;
+$danger-color: rgb(244,67,54);
 $dark-color: #444;
 $default-color: #e7e7e7;
+
+$info-box-shadow-color: #4DD4E9;
+$primary-box-shadow-color: rgb(16,108,200);
+$success-box-shadow-color: #02CC0D;
+$warning-box-shadow-color: #F2C049;
+$danger-box-shadow-color: rgb(244,67,54);
+$dark-box-shadow-color: #444;
+$default-box-shadow-color: #e7e7e7;
 
 $info-color-border: #1aacc3;
 $primary-color-border: #007095;
@@ -44,7 +52,7 @@ $hr-border-color: #DDD;
 $hr-border-width: 1px;
 $hr-margin: 1.4rem;
 
-// form 
+// form
 $form-group-margin-bottom: 1.5rem;
 $form-control-radius: 4px;
 

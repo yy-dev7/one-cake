@@ -891,7 +891,7 @@ a[class="inhref"]:focus {
   width: 100%;
   font-family: inherit;
   -webkit-transition: border-color 0.15s linear, background 0.15s linear;
-          transition: border-color 0.15s linear, background 0.15s linear;
+  transition: border-color 0.15s linear, background 0.15s linear;
 }
 
 .form-control:focus {
@@ -1046,7 +1046,7 @@ fieldset[disabled] .btn-primary.focus,
 fieldset[disabled] .btn-primary:active,
 fieldset[disabled] .btn-primary:focus,
 fieldset[disabled] .btn-primary:hover {
-  background-color: #008CBA;
+  background-color: #106cc8;
   border-color: #007095;
 }
 
@@ -1068,7 +1068,7 @@ fieldset[disabled] .btn-success.focus,
 fieldset[disabled] .btn-success:active,
 fieldset[disabled] .btn-success:focus,
 fieldset[disabled] .btn-success:hover {
-  background-color: #71D23A;
+  background-color: #02CC0D;
   border-color: #498f24;
 }
 
@@ -1112,7 +1112,7 @@ fieldset[disabled] .btn-danger.focus,
 fieldset[disabled] .btn-danger:active,
 fieldset[disabled] .btn-danger:focus,
 fieldset[disabled] .btn-danger:hover {
-  background-color: #F15942;
+  background-color: #f44336;
   border-color: #cc2311;
 }
 
@@ -1210,7 +1210,7 @@ fieldset[disabled] .btn-dark:hover {
 }
 
 .btn.primary {
-  background-color: #008CBA;
+  background-color: #106cc8;
   border-color: #007095;
 }
 
@@ -1221,7 +1221,7 @@ fieldset[disabled] .btn-dark:hover {
 }
 
 .btn.success {
-  background-color: #71D23A;
+  background-color: #02CC0D;
   border-color: #498f24;
 }
 
@@ -1243,7 +1243,7 @@ fieldset[disabled] .btn-dark:hover {
 }
 
 .btn.danger {
-  background-color: #F15942;
+  background-color: #f44336;
   border-color: #cc2311;
 }
 
@@ -1447,7 +1447,7 @@ fieldset[disabled] .btn {
 }
 
 .list-group .item.active, .list-group .item.active:focus, .list-group .item.active:hover {
-  background-color: #008CBA;
+  background-color: #106cc8;
   color: #fff;
   border-color: #007095;
 }
