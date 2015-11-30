@@ -1,39 +1,88 @@
-@mixin input-group-size($size, $form-control-height) {
-    .input-group.#{$size} {
-        .form-control,
-        .prefix,
-        .postfix {
-            height: $form-control-height;
-        }
-        .prefix,
-        .postfix {
-            line-height: $form-control-height;
-        }
-    }
+$input-focus-color: #2196F3;
+$formfield-padding-top: 1.5rem;
+$formfield-margin-bottom: 2rem;
+$formfield-font-size: 1.5rem;
+$formfield-bd-color: rgba(0, 0, 0, .26);
+$input-height: 32px;
+$form-control-border-color: #ccc;
+$form-control-border-width: 1px;
+$form-control-bg-color: #fff;
+$form-control-border-color-focus: #999;
+$form-control-bg-color-focus: #fafafa;
+$form-control-height: 3.75rem;
+$form-control-padding: 0.6rem;
+$select-arrow-color: #C9C9C9;
+
+@mixin form-field() {
+    display: block;
+    padding-top: $formfield-padding-top;
+    margin-bottom: $formfield-margin-bottom;
+    position: relative;
 }
 
-@include input-group-size(sm, $form-control-height-sm);
-@include input-group-size(lg, $form-control-height-lg);
-
-
-@mixin prefix-appearance($prefix-appearance, $prefix-deg) {
-    .prefix.btn.#{$prefix-appearance} {
-        border-bottom-left-radius: $prefix-deg;
-        border-top-left-radius: $prefix-deg;
-        border-bottom-right-radius: 0;
-        border-top-right-radius: 0;
-    }
-    .postfix.btn.#{$prefix-appearance} {
-        border-bottom-right-radius: $prefix-deg;
-        border-top-right-radius: $prefix-deg;
-        border-bottom-left-radius: 0;
-        border-top-left-radius: 0;
-    }
+legend {
+    display: block;
+    width: 100%;
+    padding: 0;
+    margin-bottom: 1rem;
+    font-size: 1.6rem;
+    color: $default-text-color;
+    line-height: inherit;
+    font-weight: 600;
 }
 
-@include prefix-appearance(round, 1000px);
-@include prefix-appearance(radius, $prefix-radius);
+label {
+    display: inline-block;
+    max-width: 100%;
+    font-size: 1.5rem;
+    margin-bottom: 0.6rem;
+    font-weight: 700;
+    cursor: default;
+}
 
+.textfield {
+    @include form-field();
+    & > input,
+    & > textarea {
+        display: block;
+        width: 100%;
+        background-color: transparent;
+        color: $default-text-color;
+        border: none;
+        border-bottom: 1px solid $formfield-bd-color;
+        outline: 0;
+        padding: 0;
+        height: $input-height;
+        box-shadow: none;
+        border-radius: 0;
+        background-image: none;
+        font-size: $formfield-font-size;
+        &:focus {
+            border-color: $input-focus-color;
+            border-width: 2px;
+            & ~ label {
+                color: $input-focus-color;
+            }
+        }
+    }
+    & > input:focus {
+        height: 33px;
+        margin-bottom: -1px;
+    }
+    & > label {
+        position: absolute;
+        top: 0;
+        display: block;
+        width: 100%;
+        color: #BDBDBD;
+        font-size: 1.2rem;
+        font-weight: 400;
+        line-height: 1.5rem;
+        overflow-x: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+}
 
 .form-control {
     -webkit-appearance: none;
@@ -48,6 +97,10 @@
     width: 100%;
     font-family: inherit;
     transition: border-color 0.15s linear, background 0.15s linear;
+    margin: 0 0 1.2rem 0;
+    height: $form-control-height;
+    padding: $form-control-padding;
+    font-size: $formfield-font-size;
     &:focus {
         background-color: $form-control-bg-color-focus;
         border-color: $form-control-border-color-focus;
@@ -55,86 +108,237 @@
     }
 }
 
-.form-control {
-    margin: 0 0 1.2rem 0;
-    height: $form-control-height-default;
-    padding: $form-control-padding-default;
-    font-size: $form-control-font-size-default;
-}
-
-.form-control.radius {
-    border-radius: $form-control-radius;
-}
-
-.form-control.sm {
-    height: $form-control-height-sm;
-    padding: $form-control-padding-sm;
-    font-size: $form-control-font-size-sm;
-}
-
-.form-control.lg {
-    height: $form-control-height-lg;
-    padding: $form-control-padding-lg;
-    font-size: $form-control-font-size-lg;
-}
-
-.form-group {
-    margin-bottom: $form-group-margin-bottom;
-}
-
-.input-group {
-    position: relative;
-    @extend .row;
-    [class^="col-xs"] {
-        padding: 0;
+.selectfield {
+    @include form-field();
+    & > select {
+        -webkit-appearance: none;
+        display: block;
+        height: 32px;
+        width: 100%;
+        outline: 0;
+        border: none;
+        border-bottom: 1px solid $formfield-bd-color;
+        border-radius: 0;
+        box-shadow: none;
+        background-color: transparent;
+        cursor: pointer;
+        color: $default-text-color;
+        font-size: $formfield-font-size;
+        padding: 0 25px 0 0;
+        &:focus {
+            outline: 0;
+            height: 33px;
+            margin-bottom: -1px;
+            border-color: $input-focus-color;
+            border-width: 2px;
+        }
+        &:disabled {
+            color: $formfield-bd-color;
+            cursor: not-allowed;
+            background-color: transparent;
+            opacity: 1;
+        }
+    }
+    &::after {
+        content: '';
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 8px 4px 0 4px;
+        border-color: $select-arrow-color transparent transparent transparent;
+        position: absolute;
+        top: 30px;
+        right: 0;
     }
 }
 
-.prefix,
-.postfix {
-    border-width: $form-control-border-width;
-    height: $form-control-height-default;
-    line-height: $form-control-height-default;
-    font-size: $form-control-font-size-default;
-    display: block;
-    border-style: solid;
-    overflow: visible;
+.switchfield {
+    & + & {
+        margin-top: 1rem;
+    }
+    & > input[type="checkbox"] {
+        display: none;
+        &:checked + label::before {
+            background: inherit;
+            opacity: 0.5;
+        }
+        &:checked + label::after {
+            background: inherit;
+            left: 20px;
+        }
+    }
+    & > label {
+        cursor: pointer;
+        height: 0px;
+        position: relative;
+        width: 40px;
+        &::before {
+            background: #111;
+            box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.5);
+            border-radius: 8px;
+            content: '';
+            height: 16px;
+            margin-top: -8px;
+            position: absolute;
+            opacity: 0.3;
+            -webkit-transition: all 0.4s ease-in-out;
+            transition: all 0.4s ease-in-out;
+            width: 40px;
+        }
+        &::after {
+            background: white;
+            border-radius: 1000px;
+            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+            content: '';
+            height: 24px;
+            left: -4px;
+            margin-top: -8px;
+            position: absolute;
+            top: -4px;
+            -webkit-transition: all 0.3s ease-in-out;
+            transition: all 0.3s ease-in-out;
+            width: 24px;
+        }
+    }
+}
+
+.checkboxfield {
     position: relative;
-    text-align: center;
-    width: 100%;
-    z-index: 2;
+    & > input[type=checkbox] {
+        display: none;
+        &:checked ~ label .box {
+            background: $primary-color;
+            border: none;
+        }
+        &:checked ~ label .check {
+            opacity: 1;
+            -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+        }
+    }
+    & > label {
+        padding-left: 30px;
+        cursor: pointer;
+        margin-bottom: 0;
+        span {
+            display: block;
+            position: absolute;
+            left: 0;
+        }
+        .box {
+            background: #fff;
+            border: 2px solid #ccc;
+            height: 20px;
+            width: 20px;
+            z-index: 9;
+        }
+        .check {
+            top: 0;
+            left: 7px;
+            width: 7px;
+            height: 15px;
+            border: 2px solid #fff;
+            border-top: none;
+            border-left: none;
+            opacity: 0;
+            z-index: 10;
+        }
+    }
 }
 
-.prefix {
-    border-right: 0;
-}
-
-.postfix {
-    border-left: 0;
-}
-
-span.prefix,
-span.postfix,
-label.postfix,
-label.prefix {
-    border-color: $form-control-border-color;
-    background: $input-group-addon-bg;
-    color: $prefix-color;
-}
-
-.prefix.btn,
-.postfix.btn {
-    border-width: $prefix-border-width;
-    padding: 0;
-    text-align: center;
-    height: $form-control-height-default;
-    line-height: $form-control-height-default;
-}
-
-.prefix.btn {
-    margin-left: 1px;
-}
-
-.postfix.btn {
-    margin-left: -1px;
-}
+// @mixin input-group-size($size, $form-control-height) {
+//     .input-group.#{$size} {
+//         .form-control,
+//         .prefix,
+//         .postfix {
+//             height: $form-control-height;
+//         }
+//         .prefix,
+//         .postfix {
+//             line-height: $form-control-height;
+//         }
+//     }
+// }
+// @include input-group-size(sm, $form-control-height-sm);
+// @include input-group-size(lg, $form-control-height-lg);
+// @mixin prefix-appearance($prefix-appearance, $prefix-deg) {
+//     .prefix.btn.#{$prefix-appearance} {
+//         border-bottom-left-radius: $prefix-deg;
+//         border-top-left-radius: $prefix-deg;
+//         border-bottom-right-radius: 0;
+//         border-top-right-radius: 0;
+//     }
+//     .postfix.btn.#{$prefix-appearance} {
+//         border-bottom-right-radius: $prefix-deg;
+//         border-top-right-radius: $prefix-deg;
+//         border-bottom-left-radius: 0;
+//         border-top-left-radius: 0;
+//     }
+// }
+// @include prefix-appearance(round, 1000px);
+// @include prefix-appearance(radius, $prefix-radius);
+// .form-control.radius {
+//     border-radius: $form-control-radius;
+// }
+// .form-control.sm {
+//     height: $form-control-height-sm;
+//     padding: $form-control-padding-sm;
+//     font-size: $form-control-font-size-sm;
+// }
+// .form-control.lg {
+//     height: $form-control-height-lg;
+//     padding: $form-control-padding-lg;
+//     font-size: $form-control-font-size-lg;
+// }
+// .form-group {
+//     margin-bottom: $form-group-margin-bottom;
+// }
+// .input-group {
+//     position: relative;
+//     @extend .row;
+//     [class^="col-xs"] {
+//         padding: 0;
+//     }
+// }
+// .prefix,
+// .postfix {
+//     border-width: $form-control-border-width;
+//     height: $form-control-height-default;
+//     line-height: $form-control-height-default;
+//     font-size: $form-control-font-size-default;
+//     display: block;
+//     border-style: solid;
+//     overflow: visible;
+//     position: relative;
+//     text-align: center;
+//     width: 100%;
+//     z-index: 2;
+// }
+// .prefix {
+//     border-right: 0;
+// }
+// .postfix {
+//     border-left: 0;
+// }
+// span.prefix,
+// span.postfix,
+// label.postfix,
+// label.prefix {
+//     border-color: $form-control-border-color;
+//     background: $input-group-addon-bg;
+//     color: $prefix-color;
+// }
+// .prefix.btn,
+// .postfix.btn {
+//     border-width: $prefix-border-width;
+//     padding: 0;
+//     text-align: center;
+//     height: $form-control-height-default;
+//     line-height: $form-control-height-default;
+// }
+// .prefix.btn {
+//     margin-left: 1px;
+// }
+// .postfix.btn {
+//     margin-left: -1px;
+// }

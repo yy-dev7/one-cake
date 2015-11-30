@@ -15,8 +15,41 @@
     }
 }
 
-@each $text-align-style-item in center,left,right,justify,nowrap {
+@each $text-align-style-item in center, left, right, justify, nowrap {
     @include text-align-style($text-align-style-item);
+}
+
+@mixin main-color-bg($main-color) {
+    background-color: $main-color;
+}
+
+@mixin center-absolute {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%, -50%, 0);
+    text-align: center;
+}
+
+@mixin center-fixed {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%, -50%, 0);
+    text-align: center;
+}
+
+.primary-bg {
+    @include main-color-bg($primary-color);
+}
+.success-bg {
+    @include main-color-bg($success-color);
+}
+.danger-bg {
+    @include main-color-bg($danger-color);
+}
+.dark-bg {
+    @include main-color-bg($dark-color);
 }
 
 .show {
@@ -27,7 +60,7 @@
     display: none !important;
 }
 
-.opacity {
+.transparent {
     opacity: 0;
 }
 
@@ -44,15 +77,10 @@
 }
 
 .container {
-    padding-left: 12px;
-    padding-right: 12px;
+    padding-left: 1.2rem;
+    padding-right: 1.2rem;
     margin-left: auto;
     margin-right: auto;
-}
-
-.antialiased {
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
 }
 
 .center-block {
@@ -61,7 +89,19 @@
     margin-right: auto;
 }
 
-a[class="inhref"] {
+.center-fixed {
+    @include center-fixed();
+}
+
+.center-absolute {
+    @include center-absolute();
+}
+
+.clearfix {
+    @include clearfix();
+}
+
+a[class="unlink"] {
     text-decoration: none;
     color: inherit;
     &:focus {

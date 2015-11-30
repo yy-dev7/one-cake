@@ -1,202 +1,173 @@
-@mixin btn-color($bg-color, $bd-color) {
+$button-radius: 3px;
+$button-box-shadow: 0 1.8px 5px 0 rgba(0, 0, 0, .26);
+$button-padding-horizontal-default: 2.2rem;
+$button-padding-vertical-default: 1rem;
+$button-fontsize-default: 1.5rem;
+$button-padding-horizontal-sm: 1.8rem;
+$button-padding-vertical-sm: 0.8rem;
+$button-fontsize-sm: 1.25rem;
+$button-padding-horizontal-large: 2.6rem;
+$button-padding-vertical-large: 1.375rem;
+$button-fontsize-large: 1.8rem;
+
+@mixin button-bg-color($bg-color, $color:#fff) {
     background-color: $bg-color;
-    border-color: $bd-color;
+    color: $color;
     &.active,
-    &.focus,
-    &:hover,
     &:active,
     &:focus {
-        background-color: $bd-color;
-        color: #fff;
-        z-index: 2;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, .4);
+        opacity: .75;
+    }
+    &.flat {
+        background-color: transparent;
+        color: $bg-color;
+        box-shadow: none;
+        &:hover,
+        &:active,
+        &:focus {
+            background-color: #f2f2f2;
+        }
     }
 }
 
-@mixin btn-size($size) {
+@mixin button-size($size) {
     @if $size==large {
-        padding: $btn-padding-vertical-large $btn-padding-horizontal-large;
-        font-size: $btn-fontsize-large;
+        padding: $button-padding-vertical-large $button-padding-horizontal-large;
+        font-size: $button-fontsize-large;
     }
     @else if $size==sm {
-        padding: $btn-padding-vertical-sm $btn-padding-horizontal-sm;
-        font-size: $btn-fontsize-sm;
+        padding: $button-padding-vertical-sm $button-padding-horizontal-sm;
+        font-size: $button-fontsize-sm;
     }
 }
 
-@mixin btn-disabled($btn-name, $btn-color, $btn-color-border) {
-    .btn-#{$btn-name}.disabled,
-    .btn-#{$btn-name}.disabled.active,
-    .btn-#{$btn-name}.disabled.focus,
-    .btn-#{$btn-name}.disabled:active,
-    .btn-#{$btn-name}.disabled:focus,
-    .btn-#{$btn-name}.disabled:hover,
-    .btn-#{$btn-name}[disabled],
-    .btn-#{$btn-name}[disabled].active,
-    .btn-#{$btn-name}[disabled].focus,
-    .btn-#{$btn-name}[disabled]:active,
-    .btn-#{$btn-name}[disabled]:focus,
-    .btn-#{$btn-name}[disabled]:hover,
-    fieldset[disabled] .btn-#{$btn-name},
-    fieldset[disabled] .btn-#{$btn-name}.active,
-    fieldset[disabled] .btn-#{$btn-name}.focus,
-    fieldset[disabled] .btn-#{$btn-name}:active,
-    fieldset[disabled] .btn-#{$btn-name}:focus,
-    fieldset[disabled] .btn-#{$btn-name}:hover {
-        background-color: $btn-color;
-        border-color: $btn-color-border;
-    }
-}
-
-@include btn-disabled(default, $default-color, $default-color-border);
-@include btn-disabled(info, $info-color, $info-color-border);
-@include btn-disabled(primary, $primary-color, $primary-color-border);
-@include btn-disabled(success, $success-color, $success-color-border);
-@include btn-disabled(warning, $warning-color, $warning-color-border);
-@include btn-disabled(danger, $danger-color, $danger-color-border);
-@include btn-disabled(dark, $dark-color, $dark-color-border);
-.btn {
+.button {
     -webkit-appearance: none;
+    -webkit-user-select: none;
     display: inline-block;
-    border-radius: 0;
     border-style: solid;
     border-width: 0;
-    color: #fff;
     font-weight: normal;
     line-height: normal;
     position: relative;
     text-align: center;
+    vertical-align: middle;
     text-decoration: none;
     cursor: pointer;
-    padding: $btn-padding-vertical-default $btn-padding-horizontal-default;
-    font-size: $btn-fontsize-default;
-    // transition: background-color 300ms ease-out;
+    padding: $button-padding-vertical-default $button-padding-horizontal-default;
+    font-size: $button-fontsize-default;
+    box-shadow: $button-box-shadow;
+    @include button-bg-color(#fff, $default-text-color);
+
     &:focus {
         outline: none;
     }
-    &.round {
-        border-radius: 1000px;
-    }
-    &.border {
-        border-width: 1px;
+    &:disabled,
+    &.disabled {
+        cursor: not-allowed;
+        pointer-events: none;
+        opacity: .6;
     }
     &.radius {
-        border-radius: $btn-radius;
+        border-radius: $button-radius;
+    }
+    &.fab {
+        width: 6rem;
+        height: 6rem;
+        padding: 0;
+        border-radius: 1000px;
+    }
+    &.round {
+        border-radius: 1000px;
     }
     &.block {
         display: block;
         width: 100%;
     }
     &.large {
-        @include btn-size(large);
+        @include button-size(large);
     }
     &.sm {
-        @include btn-size(sm);
-    }
-    &.default {
-        @include btn-color($default-color, $default-color-border);
-        color: #333;
-    }
-    &.info {
-        @include btn-color($info-color, $info-color-border);
+        @include button-size(sm);
     }
     &.primary {
-        @include btn-color($primary-color, $primary-color-border);
+        @include button-bg-color($primary-color);
     }
     &.success {
-        @include btn-color($success-color, $success-color-border);
-    }
-    &.warning {
-        @include btn-color($warning-color, $warning-color-border);
+        @include button-bg-color($success-color);
     }
     &.danger {
-        @include btn-color($danger-color, $danger-color-border);
+        @include button-bg-color($danger-color);
     }
     &.dark {
-        @include btn-color($dark-color, $dark-color-border);
+        @include button-bg-color($dark-color);
     }
     &.block + &.block {
         margin-top: 1.5rem;
     }
 }
 
-input[type="submit"],
-input[type="reset"],
-input[type="button"] {
-    &.btn-block {
-        width: 100%;
-    }
-}
 
 /*button group*/
 
-.btn-group {
-    list-style: none;
-    margin: 0 0 1rem;
-    left: 0;
-    @include clearfix();
-}
-
-.btn-group > li {
-    float: left;
-    display: inline-block;
-    margin: 0 -2px;
-    &:first-child {
-        .btn {
-            border-left: 0;
-        }
-    }
-    .btn {
-        border-color: rgba(255, 255, 255, 0.5);
-        border-left: 1px solid;
-    }
-    &.radius > li {
-        &:first-child {
-            .btn {
-                border-bottom-left-radius: $btn-radius;
-                border-top-left-radius: $btn-radius;
-            }
-        }
-        &:last-child {
-            .btn {
-                border-bottom-right-radius: $btn-radius;
-                border-top-right-radius: $btn-radius;
-            }
-        }
-        &.round > li {
-            &:first-child {
-                .btn {
-                    border-bottom-left-radius: 1000px;
-                    border-top-left-radius: 1000px;
-                }
-            }
-            ;
-            &:last-child {
-                .btn {
-                    border-bottom-right-radius: 1000px;
-                    border-top-right-radius: 1000px;
-                }
-            }
-        }
-    }
-}
-
-@for $list from 2 through 4 {
-    .btn-group.list-#{$list} > li {
-        float: left;
-        display: inline-block;
-        margin: 0 !important;
-        width: 100% / $list;
-        .btn {
-            width: 100%;
-        }
-    }
-}
-
-.btn.disabled,
-.btn[disabled],
-fieldset[disabled] .btn {
-    cursor: not-allowed;
-    -webkit-box-shadow: none;
-    box-shadow: none;
-    opacity: .65;
-}
+// .button-group {
+//     list-style: none;
+//     margin: 0 0 1rem;
+//     left: 0;
+//     @include clearfix();
+// }
+// .button-group > li {
+//     float: left;
+//     display: inline-block;
+//     margin: 0 -2px;
+//     &:first-child {
+//         .button {
+//             border-left: 0;
+//         }
+//     }
+//     .button {
+//         border-color: rgba(255, 255, 255, 0.5);
+//         border-left: 1px solid;
+//     }
+//     &.radius > li {
+//         &:first-child {
+//             .button {
+//                 border-bottom-left-radius: $button-radius;
+//                 border-top-left-radius: $button-radius;
+//             }
+//         }
+//         &:last-child {
+//             .button {
+//                 border-bottom-right-radius: $button-radius;
+//                 border-top-right-radius: $button-radius;
+//             }
+//         }
+//         &.round > li {
+//             &:first-child {
+//                 .button {
+//                     border-bottom-left-radius: 1000px;
+//                     border-top-left-radius: 1000px;
+//                 }
+//             }
+//             ;
+//             &:last-child {
+//                 .button {
+//                     border-bottom-right-radius: 1000px;
+//                     border-top-right-radius: 1000px;
+//                 }
+//             }
+//         }
+//     }
+// }
+// @for $list from 2 through 4 {
+//     .button-group.list-#{$list} > li {
+//         float: left;
+//         display: inline-block;
+//         margin: 0 !important;
+//         width: 100% / $list;
+//         .button {
+//             width: 100%;
+//         }
+//     }
+// }

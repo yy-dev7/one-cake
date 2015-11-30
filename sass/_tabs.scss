@@ -1,0 +1,44 @@
+$tab-active-color: #2196F3;
+$tab-li-a-height: 5rem;
+$tab-li-a-padding: 2.5rem;
+$tab-font-size: 1.4rem;
+.tabs {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 0;
+    background-color: transparent;
+    white-space: nowrap;
+    overflow-x: auto;
+    & > li {
+        display: inline-block;
+        & > a {
+            display: block;
+            white-space: nowrap;
+            text-transform: uppercase;
+            font-weight: 500;
+            font-size: $tab-font-size;
+            color: $default-text-color;
+            cursor: default;
+            height: $tab-li-a-height;
+            line-height: $tab-li-a-height;
+            padding-left: $tab-li-a-padding;
+            padding-right: $tab-li-a-padding;
+            user-select: none;
+        }
+        &.active {
+            border-bottom: 2px solid $tab-active-color;
+            & > a {
+                color: $tab-active-color;
+            }
+        }
+    }
+    &.justified {
+        display: table;
+        width: 100%;
+        table-layout: fixed;
+        & > li {
+            display: table-cell;
+            text-align: center;
+        }
+    }
+}

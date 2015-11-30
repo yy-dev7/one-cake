@@ -1,13 +1,19 @@
 @for $col from 1 through 12 {
-    .col-xs-#{$col} {
+    .column-#{$col} {
         width: $col / 12 * 100%;
         position: relative;
-        min-height: 1px;
         padding-left: 1rem;
         padding-right: 1rem;
         float: left;
     }
 }
+
+@for $offset from 1 through 12 {
+    .offset-#{$offset} {
+        margin-left: $offset / 12 * 100%;
+    }
+}
+
 .row {
     @include clearfix();
     margin: 0 auto;
@@ -19,13 +25,26 @@
         width: auto;
     }
 }
-.visible-xs-block {
+
+.no-gutter {
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.visible-block {
     @include clearfix();
     display: block !important;
 }
 
-@for $offset from 1 through 12 {
-    .offset-#{$offset} {
-        margin-left: $offset / 12 * 100%;
+.table-row {
+    display: table;
+    width: 100%;
+    table-layout: fixed; //tableLayout 属性用来显示表格单元格、行、列的算法规则。
+    border-spacing: 0; //规定相邻单元的边框之间的距离。如果定义两个 length 参数，那么第一个设置水平间距，而第二个设置垂直间距。
+    .cell {
+        display: table-cell;
+        &.middle {
+            vertical-align: middle;
+        }
     }
 }

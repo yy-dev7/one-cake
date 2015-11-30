@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+    <title>grid</title>
+    <link rel="stylesheet" href="../css/cake.css">
+    <style>
+    div[class^="column"],.cell {
+        background-color: #ccc;
+    }
+
+    .row + .row {
+        margin-top: 10px;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="column-1">col</div>
+            <div class="column-1">col</div>
+            <div class="column-1">col</div>
+            <div class="column-1">col</div>
+            <div class="column-1">col</div>
+            <div class="column-1">col</div>
+            <div class="column-1">col</div>
+            <div class="column-1">col</div>
+            <div class="column-1">col</div>
+            <div class="column-1">col</div>
+            <div class="column-1">col</div>
+            <div class="column-1">col</div>
+        </div>
+        <div class="row">
+            <div class="column-3">column-3</div>
+            <div class="column-3">column-3</div>
+            <div class="column-3">column-3</div>
+            <div class="column-3">column-3</div>
+        </div>
+        <div class="row">
+            <div class="column-9 offset-3">column-9 offset-3</div>
+        </div>
+        <div class="row">
+            <div class="column-6">.column-6 Resize your viewport or check it out on your phone for an example.</div>
+            <div class="column-6">.column-6</div>
+            <!-- Add the extra clearfix for only the required viewport -->
+            <div class="visible-block"></div>
+            <div class="column-6">.column-6</div>
+            <div class="column-6">.column-6</div>
+        </div>
+        <h3>table-row</h3>
+        <div class="table-row">
+            <div class="cell middle">table-cell middle</div>
+            <div class="cell middle">table-cell</div>
+            <div class="cell middle">table-cell</div>
+            <div class="cell middle">table-cell</div>
+            <div class="cell middle">table-cell</div>
+        </div>
+    </div>
+</body>
+
+</html>

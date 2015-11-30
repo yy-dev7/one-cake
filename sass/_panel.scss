@@ -1,0 +1,61 @@
+$panel-margin-bottom: 2rem;
+$panel-bg-color: #fff;
+$panel-border-color: #ddd;
+$panel-border-radius: 4px;
+$panel-heading-color: #333;
+$panel-header-bg-color: #f5f5f5;
+$panel-title-font-size: 1.4rem;
+$panel-pading:1rem 1.5rem;
+
+.card {
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 0;
+    background-color: #FFF;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .16), 0 0 2px 0 rgba(0, 0, 0, .12);
+}
+
+.panel {
+    margin-bottom: $panel-margin-bottom;
+    background-color: $panel-bg-color;
+    border: 1px solid transparent;
+    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+    border-color: $panel-border-color;
+    &.radius {
+        border-radius: $panel-border-radius;
+        .panel-heading {
+            border-top-left-radius: $panel-border-radius;
+            border-top-right-radius: $panel-border-radius;
+        }
+        .panel-footer {
+            border-bottom-right-radius: $panel-border-radius;
+            border-bottom-left-radius: $panel-border-radius;
+        }
+    }
+}
+
+.panel-heading {
+    padding: $panel-pading;
+    border-bottom: 1px solid transparent;
+    color: $panel-heading-color;
+    background-color: $panel-header-bg-color;
+    border-color: $panel-border-color
+}
+
+.panel-body {
+    padding: 15px;
+}
+
+.panel-footer {
+    padding: $panel-pading;
+    background-color: $panel-header-bg-color;
+    border-top: 1px solid $panel-border-color
+}
+
+.panel-title {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: $panel-title-font-size;
+    color: inherit;
+}
