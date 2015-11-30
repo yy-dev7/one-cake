@@ -1,3 +1,11 @@
+$list-group-margin-bottom: 1rem;
+$list-group-item-padding-top: 1rem;
+$list-group-item-padding-left: 1.5rem;
+$list-group-item-bg-color: #fff;
+$list-group-item-bd-width: 1px;
+$list-group-bd-radius: 4px;
+$badge-color: #908D8D;
+
 .list-group {
     padding-left: 0;
     list-style: none;
@@ -32,7 +40,6 @@
         &.active:hover {
             background-color: $primary-color;
             color:#fff;
-            // border-color: $primary-color-border;
         }
     }
     &.radius {
