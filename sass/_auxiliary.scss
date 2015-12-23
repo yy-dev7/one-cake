@@ -81,6 +81,7 @@
     padding-right: 1.2rem;
     margin-left: auto;
     margin-right: auto;
+    @include clearfix();
 }
 
 .center-block {

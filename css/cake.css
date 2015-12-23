@@ -619,6 +619,15 @@ hr {
   margin-right: auto;
 }
 
+.container:before, .container:after {
+  content: " ";
+  display: table;
+}
+
+.container:after {
+  clear: both;
+}
+
 .center-block {
   display: block;
   margin-left: auto;
