@@ -1,3 +1,2 @@
 #one-cake
-1. npm install 
-2. gulp
+[DOC 文档](http://mervynyang.github.io/one-cake)
