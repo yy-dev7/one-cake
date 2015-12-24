@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="description" content="One-cake文档 : mobile css ">
+    <link rel="stylesheet" href="css/cake.min.css">
+    <link rel="stylesheet" href="stylesheets/highlight/styles/solarized-light.css">
+    <link rel="stylesheet" href="stylesheets/doc.css">
+    <title>One-cake文档</title>
+</head>
+
+<body>
+    <div class="row docs">
+        <nav class="left-navbar column-3">
+            <div class="list-group radius">
+                <a href="" class="item">cakecss</a>
+                <a href="#grid" class="item">栅格布局</a>
+                <a href="#button" class="item">按钮</a>
+                <a href="#form" class="item">表单</a>
+                <a href="" class="item">Porta ac consectetur ac</a>
+                <a href="#" class="item">回到顶部</a>
+            </div>
+        </nav>
+        <div class="main-content column-9">
+            <section id="cakecss-intro">
+                <h1>cakecss简介</h1>
+                <p>cakecss是基于移动端开发的轻量级material design的css库。压缩后只有15k不到。可通过bower安装。或者直接<a href="https://github.com/mervynyang/one-cake/zipball/master">下载zip文件</a>。</p>
+                <p>cakecss主要的样式定义为：<strong>类名 + 辅助样式 + 辅助样式</strong>，比如： <strong>&lt;button class=&quot;button success large&quot;&gt;button&lt;/button&gt;</strong>。可以多个辅助样式一起使用，也能单独使用。</p>
+                <pre>
+                <code class="bash">
+                    bower install onecake
+                </code>
+            </pre>
+            </section>
+            <section id="grid">
+                <h1>栅格布局</h1>
+                <p>按常规，分为12格，而且在移动端12格已经完全够了。栅格布局的类名是<strong>column</strong>。</p>
+                <div class="row doc">
+                    <div class="column-1">col-1</div>
+                    <div class="column-1">col-1</div>
+                    <div class="column-1">col-1</div>
+                    <div class="column-1">col-1</div>
+                    <div class="column-1">col-1</div>
+                    <div class="column-1">col-1</div>
+                    <div class="column-1">col-1</div>
+                    <div class="column-1">col-1</div>
+                    <div class="column-1">col-1</div>
+                    <div class="column-1">col-1</div>
+                    <div class="column-1">col-1</div>
+                    <div class="column-1">col-1</div>
+                </div>
+                <div class="row doc">
+                    <div class="column-6">column-6</div>
+                    <div class="column-3">column-3</div>
+                    <div class="column-3">column-3</div>
+                </div>
+                <pre>
+                <code class="html">
+                &lt;div class=&quot;row&quot;&gt;
+                    &lt;div class=&quot;column-1&quot;&gt;col-1&lt;/div&gt;
+                    &lt;div class=&quot;column-1&quot;&gt;col-1&lt;/div&gt;
+                    &lt;div class=&quot;column-1&quot;&gt;col-1&lt;/div&gt;
+                    &lt;div class=&quot;column-1&quot;&gt;col-1&lt;/div&gt;
+                    &lt;div class=&quot;column-1&quot;&gt;col-1&lt;/div&gt;
+                    &lt;div class=&quot;column-1&quot;&gt;col-1&lt;/div&gt;
+                    &lt;div class=&quot;column-1&quot;&gt;col-1&lt;/div&gt;
+                    &lt;div class=&quot;column-1&quot;&gt;col-1&lt;/div&gt;
+                    &lt;div class=&quot;column-1&quot;&gt;col-1&lt;/div&gt;
+                    &lt;div class=&quot;column-1&quot;&gt;col-1&lt;/div&gt;
+                    &lt;div class=&quot;column-1&quot;&gt;col-1&lt;/div&gt;
+                    &lt;div class=&quot;column-1&quot;&gt;col-1&lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;row&quot;&gt;
+                    &lt;div class=&quot;column-6&quot;&gt;column-6&lt;/div&gt;
+                    &lt;div class=&quot;column-3&quot;&gt;column-3&lt;/div&gt;
+                    &lt;div class=&quot;column-3&quot;&gt;column-3&lt;/div&gt;
+                &lt;/div&gt;
+                </code>
+                </pre>
+                <h3>列偏移</h3>
+                <div class="row doc">
+                    <div class="column-9 offset-3">column-9 offset-3</div>
+                </div>
+                <pre>
+                <code class="html">
+                &lt;div class=&quot;row&quot;&gt;
+                    &lt;div class=&quot;column-9 offset-3&quot;&gt;column-9 offset-3&lt;/div&gt;
+                &lt;/div&gt;
+                </code>
+                </pre>
+                <h3>响应式列重置</h3>
+                <p>在某些阈值时，某些列可能会出现比别的列高的情况。用<strong>visible-block</strong>就可以。</p>
+                <pre>
+                <code class="html">
+                &lt;div class=&quot;visible-block&quot;&gt;&lt;/div&gt;
+                </code>
+                </pre>
+                <h3>表格布局</h3>
+                <p>当我们需要用到表格布局的时候，用<strong>table-row</strong>和<strong>cell</strong>。加上<strong>middle</strong>可实现垂直居中</p>
+                <div class="table-row doc">
+                    <div class="cell">cell</div>
+                    <div class="cell">cell</div>
+                    <div class="cell">cell</div>
+                    <div class="cell">cell</div>
+                    <div class="cell">cell</div>
+                </div>
+                <div class="table-row doc">
+                    <div class="cell">cell</div>
+                    <div class="cell">cell</div>
+                </div>
+                <pre>
+                <code class="html">
+                &lt;div class=&quot;table-row&quot;&gt;
+                    &lt;div class=&quot;cell&quot;&gt;cell&lt;/div&gt;
+                    &lt;div class=&quot;cell&quot;&gt;cell&lt;/div&gt;
+                    &lt;div class=&quot;cell&quot;&gt;cell&lt;/div&gt;
+                    &lt;div class=&quot;cell&quot;&gt;cell&lt;/div&gt;
+                    &lt;div class=&quot;cell&quot;&gt;cell&lt;/div&gt;
+                    &lt;!--如果需要设置vertical-align为middle：--&gt;
+                    &lt;div class=&quot;cell middle&quot;&gt;cell&lt;/div&gt;
+                &lt;/div&gt;
+                </code>
+                </pre>
+            </section>
+
+            <section id="button">
+                <h1>按钮</h1>
+                <p>按钮的类名是<strong>button</strong>，其辅助样式有：</p>
+                <h3>颜色类</h3>
+                <button class="button primary">primary</button>
+                <button class="button success">success</button>
+                <button class="button dark">dark</button>
+                <button class="button danger">danger</button>
+                <pre>
+                <code class="html">
+                &lt;button class=&quot;button primary&quot;&gt;primary&lt;/button&gt;
+                &lt;button class=&quot;button success&quot;&gt;success&lt;/button&gt;
+                &lt;button class=&quot;button dark&quot;&gt;dark&lt;/button&gt;
+                &lt;button class=&quot;button danger&quot;&gt;danger&lt;/button&gt;
+                </code>
+                </pre>
+                <h3>形状类</h3>
+                <button class="button primary fab">fab</button>
+                <button class="button success round">round</button>
+                <button class="button danger radius">radius</button>
+                <pre>
+                <code class="html">
+                &lt;button class=&quot;button primary fab&quot;&gt;fab&lt;/button&gt;
+                &lt;button class=&quot;button success round&quot;&gt;round&lt;/button&gt;
+                &lt;button class=&quot;button danger radius&quot;&gt;radius&lt;/button&gt;
+                </code>
+                </pre>
+                <h3>大小类</h3>
+                <button class="button primary sm">sm</button>
+                <button class="button primary">default</button>
+                <button class="button primary large">large</button>
+                <pre>
+                <code class="html">
+                &lt;button class=&quot;button primary sm&quot;&gt;sm&lt;/button&gt;
+                &lt;button class=&quot;button primary&quot;&gt;default&lt;/button&gt;
+                &lt;button class=&quot;button primary large&quot;&gt;large&lt;/button&gt;
+                </code>
+                </pre>
+                <h3>状态类</h3>
+                <button class="button primary flat">flat</button>
+                <button class="button danger flat">flat</button>
+                <button class="button primary" disabled>disabled</button>
+                <button class="button primary active">active</button>
+                <pre>
+                <code class="html">
+                &lt;button class=&quot;button primary sm&quot;&gt;sm&lt;/button&gt;
+                &lt;button class=&quot;button primary&quot;&gt;default&lt;/button&gt;
+                &lt;button class=&quot;button primary large&quot;&gt;large&lt;/button&gt;
+                </code>
+                </pre>
+            </section>
+
+            <section id="form">
+                <h1>表单</h1>
+                <h3>普通表单</h3>
+                <div class="textfield">
+                    <input type="text" placeholder="input">
+                </div>
+                <div class="textfield">
+                    <textarea placeholder="textarea"></textarea>
+                </div>
+                <pre>
+                <code class="html">
+                &lt;div class=&quot;textfield&quot;&gt;
+                    &lt;input type=&quot;text&quot; placeholder=&quot;input&quot;&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;textfield&quot;&gt;
+                    &lt;textarea placeholder=&quot;textarea&quot;&gt;&lt;/textarea&gt;
+                &lt;/div&gt;
+                </code>
+                </pre>
+                <h3>带label的表单</h3>
+                <div class="textfield">
+                    <input type="text">
+                    <label>input</label>
+                </div>
+                <div class="textfield">
+                    <textarea></textarea>
+                    <label>textarea</label>
+                </div>
+                <pre>
+                <code class="html">
+                &lt;div class=&quot;textfield&quot;&gt;
+                    &lt;input type=&quot;text&quot;&gt;
+                    &lt;label&gt;input&lt;/label&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;textfield&quot;&gt;
+                    &lt;textarea&gt;&lt;/textarea&gt;
+                    &lt;label&gt;textarea&lt;/label&gt;
+                &lt;/div&gt;
+                </code>
+                </pre>
+            </section>
+
+        </div>
+    </div>
+    <script src="stylesheets/highlight/highlight.pack.js"></script>
+    <script>
+    hljs.initHighlightingOnLoad();
+    </script>
+</body>
+
+</html>

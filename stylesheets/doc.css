@@ -1,0 +1,30 @@
+body {
+    max-width: 100%;
+}
+
+.main-content {
+    padding-bottom: 5%;
+}
+
+.docs {
+    margin-top: 5%;
+    width: 85%;
+}
+
+#cakecss-intro .primary-bg{
+    color: #fff;
+}
+
+.doc.row,.doc.table-row {
+    margin: 10px 0;
+}
+
+.doc div[class^="column"],.doc.table-row .cell {
+    background-color: #E9E6EE;
+    border: 1px solid #B9B0C7;
+    border-right: 0;
+}
+
+.doc div[class^="column"],.doc.table-row .cell:last-child {
+    border-right: 1px solid #B9B0C7;
+}
