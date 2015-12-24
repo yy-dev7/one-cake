@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <meta name="description" content="One-cake文档 : mobile css ">
     <link rel="stylesheet" href="css/cake.min.css">
-    <link rel="stylesheet" href="stylesheets/highlight/styles/solarized-light.css">
+    <link rel="stylesheet" href="stylesheets/highlight/styles/solarized-dark.css">
     <link rel="stylesheet" href="stylesheets/doc.css">
     <title>One-cake文档</title>
 </head>
@@ -19,7 +19,12 @@
                 <a href="#grid" class="item">栅格布局</a>
                 <a href="#button" class="item">按钮</a>
                 <a href="#form" class="item">表单</a>
+                <a href="#auxiliary" class="item">辅助类</a>
                 <a href="#image" class="item">图片</a>
+                <a href="#panel" class="item">面板</a>
+                <a href="#tab" class="item">选项卡</a>
+                <a href="#listgroup" class="item">列表组</a>
+                <a href="#well" class="item">well</a>
                 <a href="#" class="item">回到顶部</a>
             </div>
         </nav>
@@ -301,6 +306,102 @@
                 </code>
                 </pre>
             </section>
+            <section id="auxiliary">
+                <h1>辅助类</h1>
+                <h3>container</h3>
+                <pre>
+                <code class="html">
+                &lt;div class=&quot;container&quot;&gt;&lt;/div&gt;
+                </code>
+                </pre>
+                <h3>文本样式</h3>
+                <div class="well text-center">.text-center</div>
+                <div class="well text-left">.text-left</div>
+                <div class="well text-right">.text-right</div>
+                <div class="well text-nowrap">.text-nowrap</div>
+                <h3>隐藏和显示</h3>
+                <pre>
+                <code class="html">
+                &lt;div class=&quot;show&quot;&gt;&lt;/div&gt;
+                &lt;div class=&quot;hide&quot;&gt;&lt;/div&gt;
+                &lt;div class=&quot;transparent&quot;&gt;&lt;/div&gt;
+                &lt;div class=&quot;invisible&quot;&gt;&lt;/div&gt;
+                </code>
+                </pre>
+                <p>分别对应的css。</p>
+                <pre>
+                <code class="css">
+                .show {
+                    display: block;
+                }
+
+                .hide {
+                    display: none !important;
+                }
+
+                .transparent {
+                    opacity: 0;
+                }
+
+                .invisible {
+                    visibility: hidden;
+                }
+                </code>
+                </pre>
+                <h3>快速浮动</h3>
+                <pre>
+                <code class="html">
+                &lt;div class=&quot;left&quot;&gt;&lt;/div&gt;
+                &lt;div class=&quot;right&quot;&gt;&lt;/div&gt;
+                </code>
+                </pre>
+                <h3>清除浮动</h3>
+                <pre>
+                <code class="html">
+                &lt;div class=&quot;clearfix&quot;&gt;&lt;/div&gt;
+                </code>
+                </pre>
+                <h3>块元素居中</h3>
+                <pre>
+                <code class="html">
+                &lt;div class=&quot;center-block&quot;&gt;&lt;/div&gt;
+                </code>
+                </pre>
+                <h3>无样式的<strong>a</strong>标签</h3>
+                <pre>
+                <p><a href="" class="nostyle">nostyle</a></p>
+                <code class="html">
+                &lt;a class=&quot;nostyle&quot;&gt;&lt;/a&gt;
+                </code>
+                </pre>
+                <h3>absolute、fixed水平垂直居中</h3>
+                <pre>
+                <code class="html">
+                &lt;div class=&quot;center-fixed&quot;&gt;&lt;/div&gt;
+                &lt;div class=&quot;center-absolute&quot;&gt;&lt;/div&gt;
+                </code>
+                </pre>
+                <pre>
+                <code class="css">
+                .center-fixed {
+                    position: fixed;
+                    top: 50%;
+                    left: 50%;
+                    -webkit-transform: translate3d(-50%,-50%,0);
+                    transform: translate3d(-50%,-50%,0);
+                    text-align: center;
+                }
+                .center-absolute {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    -webkit-transform: translate3d(-50%,-50%,0);
+                    transform: translate3d(-50%,-50%,0);
+                    text-align: center;
+                }
+                </code>
+                </pre>
+            </section>
             <section id="image">
                 <h1>图片类</h1>
                 <h3>图片形状</h3>
@@ -314,7 +415,7 @@
                 </pre>
                 <h3>100%宽度的图片</h3>
                 <img src="http://www.atool.org/placeholder.png?size=1000x100&text=img-block" class="img-block" alt="">
-                 <pre>
+                <pre>
                 <code class="html">
                 &lt;img src=&quot;http://www.atool.org/placeholder.png?size=1000x100&quot; class=&quot;img-block&quot; alt=&quot;&quot;&gt;
                 </code>
@@ -332,6 +433,201 @@
                     &lt;img src=&quot;http://www.atool.org/placeholder.png?size=1000x100&amp;text=img-group&quot; alt=&quot;&quot;&gt;
                     &lt;img src=&quot;http://www.atool.org/placeholder.png?size=1000x100&amp;text=img-group&quot; alt=&quot;&quot;&gt;
                 &lt;/div&gt;
+                </code>
+                </pre>
+            </section>
+            <section id="panel">
+                <h1>面板</h1>
+                <h3>直角边框且带脚注的面板。</h3>
+                <div class="panel">
+                    <div class="panel-heading ">
+                        Panel heading without title
+                    </div>
+                    <div class="panel-body">
+                        Panel content
+                    </div>
+                    <div class="panel-footer">
+                        Panel footer
+                    </div>
+                </div>
+                <pre>
+                <code class="html">
+                &lt;div class=&quot;panel&quot;&gt;
+                    &lt;div class=&quot;panel-heading &quot;&gt;
+                        Panel heading without title
+                    &lt;/div&gt;
+                    &lt;div class=&quot;panel-body&quot;&gt;
+                        Panel content
+                    &lt;/div&gt;
+                    &lt;div class=&quot;panel-footer&quot;&gt;
+                        Panel footer
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                </code>
+                </pre>
+                <h3>圆角边框且不带脚注的面板。</h3>
+                <div class="panel radius">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Panel title</h3>
+                    </div>
+                    <div class="panel-body">
+                        Panel content
+                    </div>
+                </div>
+                <pre>
+                <code class="html">
+                &lt;div class=&quot;panel radius&quot;&gt;
+                    &lt;div class=&quot;panel-heading&quot;&gt;
+                        &lt;h3 class=&quot;panel-title&quot;&gt;Panel title&lt;/h3&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;panel-body&quot;&gt;
+                        Panel content
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                </code>
+                </pre>
+                <h3>卡片</h3>
+                <div class="card">
+                    <h2>card</h2></div>
+                <pre>
+                <code class="html">
+                &lt;div class=&quot;card&quot;&gt;&lt;h2&gt;card&lt;/h2&gt;&lt;/div&gt;
+                </code>
+                </pre>
+            </section>
+            <section id="tab">
+                <h1>选项卡</h1>
+                <h3>自适应宽度的选项卡。</h3>
+                <ul class="tabs">
+                    <li class="active"><a>Tab-1</a></li>
+                    <li><a>Tab-2</a></li>
+                    <li><a>Tab-3</a></li>
+                </ul>
+                <pre>
+                <code class="html">
+                &lt;ul class=&quot;tabs&quot;&gt;
+                    &lt;li class=&quot;active&quot;&gt;&lt;a&gt;Tab-1&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a&gt;Tab-2&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a&gt;Tab-3&lt;/a&gt;&lt;/li&gt;
+                &lt;/ul&gt;
+                </code>
+                </pre>
+                <h3>宽度为100%的选项卡。</h3>
+                <ul class="tabs justified">
+                    <li class="active"><a>Tab-1</a></li>
+                    <li><a>Tab-2</a></li>
+                    <li><a>Tab-3</a></li>
+                </ul>
+                <pre>
+                <code class="html">
+                &lt;ul class=&quot;tabs justified&quot;&gt;
+                    &lt;li class=&quot;active&quot;&gt;&lt;a&gt;Tab-1&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a&gt;Tab-2&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a&gt;Tab-3&lt;/a&gt;&lt;/li&gt;
+                &lt;/ul&gt;
+                </code>
+                </pre>
+            </section>
+            <section id="listgroup">
+                <h1>列表组</h1>
+                <h3>激活状态且带圆角边框的列表。</h3>
+                <ul class="list-group radius">
+                    <li class="item">Cras justo odio</li>
+                    <li class="item">Dapibus ac facilisis in</li>
+                    <li class="item active">item active</li>
+                    <li class="item">Porta ac consectetur ac</li>
+                    <li class="item">Vestibulum at eros</li>
+                </ul>
+                <pre>
+                <code class="html">
+                &lt;ul class=&quot;list-group radius&quot;&gt;
+                    &lt;li class=&quot;item&quot;&gt;Cras justo odio&lt;/li&gt;
+                    &lt;li class=&quot;item&quot;&gt;Dapibus ac facilisis in&lt;/li&gt;
+                    &lt;li class=&quot;item active&quot;&gt;item active&lt;/li&gt;
+                    &lt;li class=&quot;item&quot;&gt;Porta ac consectetur ac&lt;/li&gt;
+                    &lt;li class=&quot;item&quot;&gt;Vestibulum at eros&lt;/li&gt;
+                &lt;/ul&gt;
+                </code>
+                </pre>
+                <h3>链接</h3>
+                <p>用<strong>&lt;div&gt;、&lt;a&gt;</strong>标签可以组成一个全部是链接的列表组。</p>
+                <div class="list-group">
+                    <a href="" class="item">Cras justo odio</a>
+                    <a href="" class="item">Dapibus ac faciasis in</a>
+                    <a href="" class="item">Morbi leo risus</a>
+                    <a href="" class="item">Porta ac consectetur ac</a>
+                    <a href="" class="item">Vestibulum at eros</a>
+                </div>
+                <pre>
+                <code class="html">
+                &lt;div class=&quot;list-group&quot;&gt;
+                    &lt;a href=&quot;&quot; class=&quot;item&quot;&gt;Cras justo odio&lt;/a&gt;
+                    &lt;a href=&quot;&quot; class=&quot;item&quot;&gt;Dapibus ac faciasis in&lt;/a&gt;
+                    &lt;a href=&quot;&quot; class=&quot;item&quot;&gt;Morbi leo risus&lt;/a&gt;
+                    &lt;a href=&quot;&quot; class=&quot;item&quot;&gt;Porta ac consectetur ac&lt;/a&gt;
+                    &lt;a href=&quot;&quot; class=&quot;item&quot;&gt;Vestibulum at eros&lt;/a&gt;
+                &lt;/div&gt;
+                </code>
+                </pre>
+                <h3>徽章</h3>
+                <ul class="list-group">
+                    <li class="item">Cras justo odio <span class="badge">24</span></li>
+                    <li class="item">Dapibus ac facilisis in</li>
+                    <li class="item">Morbi leo risus <span class="badge">badge</span></li>
+                    <li class="item">Porta ac consectetur ac</li>
+                    <li class="item">Vestibulum at eros</li>
+                </ul>
+                <pre>
+                <code class="html">
+                &lt;ul class=&quot;list-group&quot;&gt;
+                    &lt;li class=&quot;item&quot;&gt;Cras justo odio &lt;span class=&quot;badge&quot;&gt;24&lt;/span&gt;&lt;/li&gt;
+                    &lt;li class=&quot;item&quot;&gt;Dapibus ac facilisis in&lt;/li&gt;
+                    &lt;li class=&quot;item&quot;&gt;Morbi leo risus &lt;span class=&quot;badge&quot;&gt;badge&lt;/span&gt;&lt;/li&gt;
+                    &lt;li class=&quot;item&quot;&gt;Porta ac consectetur ac&lt;/li&gt;
+                    &lt;li class=&quot;item&quot;&gt;Vestibulum at eros&lt;/li&gt;
+                &lt;/ul&gt;
+                </code>
+                </pre>
+            </section>
+            <section id="well">
+                <h1>well</h1>
+                <p>把 Well 用在元素上，能有嵌入（inset）的的简单效果。命名参考的bootstrap。</p>
+                <h3>默认效果</h3>
+                <div class="well">well</div>
+                <pre>
+                <code class="html">
+                &lt;div class=&quot;well&quot;&gt;well&lt;/div&gt;
+                </code>
+                </pre>
+                <h3>大小类</h3>
+                <p><strong>可选样式sm、lg。</strong></p>
+                <div class="well sm">well sm</div>
+                <div class="well lg">well lg</div>
+                <pre>
+                <code class="html">
+                &lt;div class=&quot;well sm&quot;&gt;well sm&lt;/div&gt;
+                &lt;div class=&quot;well lg&quot;&gt;well lg&lt;/div&gt;
+                </code>
+                </pre>
+                <h3>颜色类</h3>
+                <p>可选颜色有<strong>danger、success、primary、dark</strong></p>
+                <div class="well danger">danger</div>
+                <div class="well success">success</div>
+                <div class="well primary">primary</div>
+                <div class="well dark">dark</div>
+                <pre>
+                <code class="html">
+                &lt;div class=&quot;well danger&quot;&gt;danger&lt;/div&gt;
+                &lt;div class=&quot;well success&quot;&gt;success&lt;/div&gt;
+                &lt;div class=&quot;well primary&quot;&gt;primary&lt;/div&gt;
+                &lt;div class=&quot;well dark&quot;&gt;dark&lt;/div&gt;
+                </code>
+                </pre>
+                <h3>圆角边框类</h3>
+                <div class="well radius">well radius</div>
+                <pre>
+                <code class="html">
+                &lt;div class=&quot;well radius&quot;&gt;well radius&lt;/div&gt;
                 </code>
                 </pre>
             </section>

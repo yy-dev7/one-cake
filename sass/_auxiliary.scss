@@ -102,7 +102,7 @@
     @include clearfix();
 }
 
-a[class="unlink"] {
+a[class="nostyle"] {
     text-decoration: none;
     color: inherit;
     &:focus {
