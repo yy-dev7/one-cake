@@ -12,18 +12,18 @@
 </head>
 
 <body>
-    <div class="row docs">
-        <nav class="left-navbar column-3">
-            <div class="list-group radius">
+    <div class="docs container">
+        <nav class="left-navbar">
+            <div class="list-group">
                 <a href="" class="item">cakecss</a>
                 <a href="#grid" class="item">栅格布局</a>
                 <a href="#button" class="item">按钮</a>
                 <a href="#form" class="item">表单</a>
-                <a href="" class="item">Porta ac consectetur ac</a>
+                <a href="#image" class="item">图片</a>
                 <a href="#" class="item">回到顶部</a>
             </div>
         </nav>
-        <div class="main-content column-9">
+        <div class="main-content">
             <section id="cakecss-intro">
                 <h1>cakecss简介</h1>
                 <p>cakecss是基于移动端开发的轻量级material design的css库。压缩后只有15k不到。可通过bower安装。或者直接<a href="https://github.com/mervynyang/one-cake/zipball/master">下载zip文件</a>。</p>
@@ -124,7 +124,6 @@
                 </code>
                 </pre>
             </section>
-
             <section id="button">
                 <h1>按钮</h1>
                 <p>按钮的类名是<strong>button</strong>，其辅助样式有：</p>
@@ -170,16 +169,23 @@
                 <button class="button primary active">active</button>
                 <pre>
                 <code class="html">
-                &lt;button class=&quot;button primary sm&quot;&gt;sm&lt;/button&gt;
-                &lt;button class=&quot;button primary&quot;&gt;default&lt;/button&gt;
-                &lt;button class=&quot;button primary large&quot;&gt;large&lt;/button&gt;
+                &lt;button class=&quot;button primary flat&quot;&gt;flat&lt;/button&gt;
+                &lt;button class=&quot;button danger flat&quot;&gt;flat&lt;/button&gt;
+                &lt;button class=&quot;button primary&quot; disabled&gt;disabled&lt;/button&gt;
+                &lt;button class=&quot;button primary active&quot;&gt;active&lt;/button&gt;
                 </code>
                 </pre>
             </section>
-
             <section id="form">
                 <h1>表单</h1>
-                <h3>普通表单</h3>
+                <h3>普通输入框</h3>
+                <input type="text" class="form-control">
+                <pre>
+                <code class="html">
+                &lt;input type=&quot;text&quot; class=&quot;form-control&quot;&gt;
+                </code>
+                </pre>
+                <h3>material输入框</h3>
                 <div class="textfield">
                     <input type="text" placeholder="input">
                 </div>
@@ -196,7 +202,7 @@
                 &lt;/div&gt;
                 </code>
                 </pre>
-                <h3>带label的表单</h3>
+                <h3>带label的material输入框</h3>
                 <div class="textfield">
                     <input type="text">
                     <label>input</label>
@@ -217,8 +223,94 @@
                 &lt;/div&gt;
                 </code>
                 </pre>
+                <h3>下拉框</h3>
+                <div class="selectfield">
+                    <select>
+                        <option>Option 1</option>
+                        <option>Option 2</option>
+                        <option>Option 3</option>
+                        <option>Option 4</option>
+                    </select>
+                </div>
+                <pre>
+                <code class="html">
+                &lt;div class=&quot;selectfield&quot;&gt;
+                    &lt;select&gt;
+                        &lt;option&gt;Option 1&lt;/option&gt;
+                        &lt;option&gt;Option 2&lt;/option&gt;
+                        &lt;option&gt;Option 3&lt;/option&gt;
+                        &lt;option&gt;Option 4&lt;/option&gt;
+                    &lt;/select&gt;
+                &lt;/div&gt;
+                </code>
+                </pre>
+                <h3>开关按钮</h3>
+                <p>颜色选择有<strong>primary-bg、success-bg、dark-bg、danger-bg</strong>。</p>
+                <div class="switchfield">
+                    <input id="demo-switch1" type="checkbox">
+                    <label for="demo-switch1" class="primary-bg"></label>
+                </div>
+                <div class="switchfield">
+                    <input id="demo-switch2" type="checkbox">
+                    <label for="demo-switch2" class="success-bg"></label>
+                </div>
+                <pre>
+                <code class="html">
+                &lt;div class=&quot;switchfield&quot;&gt;
+                    &lt;input id=&quot;demo-switch1&quot; type=&quot;checkbox&quot;&gt;
+                    &lt;label for=&quot;demo-switch1&quot; class=&quot;primary-bg&quot;&gt;&lt;/label&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;switchfield&quot;&gt;
+                    &lt;input id=&quot;demo-switch2&quot; type=&quot;checkbox&quot;&gt;
+                    &lt;label for=&quot;demo-switch2&quot; class=&quot;success-bg&quot;&gt;&lt;/label&gt;
+                &lt;/div&gt;
+                </code>
+                </pre>
+                <h3>复选框</h3>
+                <p>暂时只提供primary颜色选择。</p>
+                <div class="checkboxfield">
+                    <input type="checkbox" id="check1">
+                    <label for="check1">
+                        <span class="check"></span>
+                        <span class="box"></span> checkbox1
+                    </label>
+                </div>
+                <div class="checkboxfield">
+                    <input type="checkbox" id="check2">
+                    <label for="check2">
+                        <span class="check"></span>
+                        <span class="box"></span> checkbox2
+                    </label>
+                </div>
+                <pre>
+                <code class="html">
+                &lt;div class=&quot;checkboxfield&quot;&gt;
+                    &lt;input type=&quot;checkbox&quot; id=&quot;check1&quot;&gt;
+                    &lt;label for=&quot;check1&quot;&gt;
+                        &lt;span class=&quot;check&quot;&gt;&lt;/span&gt;
+                        &lt;span class=&quot;box&quot;&gt;&lt;/span&gt; checkbox1
+                    &lt;/label&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;checkboxfield&quot;&gt;
+                    &lt;input type=&quot;checkbox&quot; id=&quot;check2&quot;&gt;
+                    &lt;label for=&quot;check2&quot;&gt;
+                        &lt;span class=&quot;check&quot;&gt;&lt;/span&gt;
+                        &lt;span class=&quot;box&quot;&gt;&lt;/span&gt; checkbox2
+                    &lt;/label&gt;
+                &lt;/div&gt;
+                </code>
+                </pre>
             </section>
-
+            <section id="image">
+                <h1>图片类</h1>
+                <h3>图片形状</h3>
+                <img src="http://www.atool.org/placeholder.png?size=200x200" class="img-circle" alt="">
+                <pre>
+                <code class="html">
+                &lt;img src=&quot;http://www.atool.org/placeholder.png?size=200x200&quot; class=&quot;img-circle&quot; alt=&quot;&quot;&gt;
+                </code>
+                </pre>
+            </section>
         </div>
     </div>
     <script src="stylesheets/highlight/highlight.pack.js"></script>

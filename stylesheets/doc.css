@@ -6,9 +6,16 @@ body {
     padding-bottom: 5%;
 }
 
+.left-navbar {
+    position: fixed;
+    width: 15%;
+}
+.main-content {
+    margin-left: 23%;
+}
 .docs {
     margin-top: 5%;
-    width: 85%;
+    width: 80%;
 }
 
 #cakecss-intro .primary-bg{

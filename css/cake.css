@@ -1085,16 +1085,16 @@ label {
   position: relative;
 }
 
-.checkboxfield > input[type=checkbox] {
+.checkboxfield > input[type="checkbox"] {
   display: none;
 }
 
-.checkboxfield > input[type=checkbox]:checked ~ label .box {
+.checkboxfield > input[type="checkbox"]:checked ~ label .box {
   background: #1077CF;
   border: none;
 }
 
-.checkboxfield > input[type=checkbox]:checked ~ label .check {
+.checkboxfield > input[type="checkbox"]:checked ~ label .check {
   opacity: 1;
   -webkit-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
@@ -1292,7 +1292,6 @@ label {
   margin-top: 1.5rem;
 }
 
-/*button group*/
 .well.dark {
   background-color: #353030;
   border-color: #e3e3e3;
@@ -1522,6 +1521,12 @@ img {
 
 .img-circle {
   border-radius: 1000px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.img-radius {
+  border-radius: 4px;
   -o-object-fit: cover;
      object-fit: cover;
 }

@@ -204,7 +204,7 @@ label {
 
 .checkboxfield {
     position: relative;
-    & > input[type=checkbox] {
+    & > input[type="checkbox"] {
         display: none;
         &:checked ~ label .box {
             background: $primary-color;
@@ -245,100 +245,3 @@ label {
         }
     }
 }
-
-// @mixin input-group-size($size, $form-control-height) {
-//     .input-group.#{$size} {
-//         .form-control,
-//         .prefix,
-//         .postfix {
-//             height: $form-control-height;
-//         }
-//         .prefix,
-//         .postfix {
-//             line-height: $form-control-height;
-//         }
-//     }
-// }
-// @include input-group-size(sm, $form-control-height-sm);
-// @include input-group-size(lg, $form-control-height-lg);
-// @mixin prefix-appearance($prefix-appearance, $prefix-deg) {
-//     .prefix.btn.#{$prefix-appearance} {
-//         border-bottom-left-radius: $prefix-deg;
-//         border-top-left-radius: $prefix-deg;
-//         border-bottom-right-radius: 0;
-//         border-top-right-radius: 0;
-//     }
-//     .postfix.btn.#{$prefix-appearance} {
-//         border-bottom-right-radius: $prefix-deg;
-//         border-top-right-radius: $prefix-deg;
-//         border-bottom-left-radius: 0;
-//         border-top-left-radius: 0;
-//     }
-// }
-// @include prefix-appearance(round, 1000px);
-// @include prefix-appearance(radius, $prefix-radius);
-// .form-control.radius {
-//     border-radius: $form-control-radius;
-// }
-// .form-control.sm {
-//     height: $form-control-height-sm;
-//     padding: $form-control-padding-sm;
-//     font-size: $form-control-font-size-sm;
-// }
-// .form-control.lg {
-//     height: $form-control-height-lg;
-//     padding: $form-control-padding-lg;
-//     font-size: $form-control-font-size-lg;
-// }
-// .form-group {
-//     margin-bottom: $form-group-margin-bottom;
-// }
-// .input-group {
-//     position: relative;
-//     @extend .row;
-//     [class^="col-xs"] {
-//         padding: 0;
-//     }
-// }
-// .prefix,
-// .postfix {
-//     border-width: $form-control-border-width;
-//     height: $form-control-height-default;
-//     line-height: $form-control-height-default;
-//     font-size: $form-control-font-size-default;
-//     display: block;
-//     border-style: solid;
-//     overflow: visible;
-//     position: relative;
-//     text-align: center;
-//     width: 100%;
-//     z-index: 2;
-// }
-// .prefix {
-//     border-right: 0;
-// }
-// .postfix {
-//     border-left: 0;
-// }
-// span.prefix,
-// span.postfix,
-// label.postfix,
-// label.prefix {
-//     border-color: $form-control-border-color;
-//     background: $input-group-addon-bg;
-//     color: $prefix-color;
-// }
-// .prefix.btn,
-// .postfix.btn {
-//     border-width: $prefix-border-width;
-//     padding: 0;
-//     text-align: center;
-//     height: $form-control-height-default;
-//     line-height: $form-control-height-default;
-// }
-// .prefix.btn {
-//     margin-left: 1px;
-// }
-// .postfix.btn {
-//     margin-left: -1px;
-// }
