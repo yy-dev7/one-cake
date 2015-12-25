@@ -57,9 +57,7 @@ $button-fontsize-large: 1.8rem;
     cursor: pointer;
     padding: $button-padding-vertical-default $button-padding-horizontal-default;
     font-size: $button-fontsize-default;
-    box-shadow: $button-box-shadow;
     @include button-bg-color(#fff, $default-text-color);
-
     &:focus {
         outline: none;
     }
@@ -71,6 +69,9 @@ $button-fontsize-large: 1.8rem;
     }
     &.radius {
         border-radius: $button-radius;
+    }
+    &.shadow {
+        box-shadow: $button-box-shadow;
     }
     &.fab {
         width: 6rem;
@@ -103,8 +104,14 @@ $button-fontsize-large: 1.8rem;
     &.dark {
         @include button-bg-color($dark-color);
     }
+    &.white {
+        @include button-bg-color(#fff, #111);
+    }
     &.block + &.block {
         margin-top: 1.5rem;
     }
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> master
