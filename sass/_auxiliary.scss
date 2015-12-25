@@ -102,10 +102,15 @@
     @include clearfix();
 }
 
-a[class="nostyle"] {
+a[class="no-link"] {
     text-decoration: none;
     color: inherit;
     &:focus {
         outline: none;
     }
+}
+
+.no-gutter {
+    margin: 0 !important;
+    padding: 0 !important;
 }

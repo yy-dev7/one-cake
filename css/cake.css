@@ -653,13 +653,18 @@ hr {
   clear: both;
 }
 
-a[class="nostyle"] {
+a[class="no-link"] {
   text-decoration: none;
   color: inherit;
 }
 
-a[class="nostyle"]:focus {
+a[class="no-link"]:focus {
   outline: none;
+}
+
+.no-gutter {
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
 .column-1 {

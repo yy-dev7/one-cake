@@ -34,6 +34,8 @@
                 <h1>cakecss简介</h1>
                 <p>cakecss是基于移动端开发的轻量级material design的css库。压缩后只有15k不到。可通过bower安装。或者直接<a href="https://github.com/mervynyang/one-cake/zipball/master">下载zip文件</a>。</p>
                 <p>cakecss主要的样式定义为：<strong>类名 + 辅助样式 + 辅助样式</strong>，比如： <strong>&lt;button class=&quot;button success large&quot;&gt;button&lt;/button&gt;</strong>。可以多个辅助样式一起使用，也能单独使用。</p>
+                <br>
+                <p><strong>tips：</strong>在cakecss中，1rem约等于10px。建议所有单位都用rem，因为cakecss rem是根据媒体查询计算出来的。</p>
                 <pre>
                 <code class="bash">
                     bower install onecake
@@ -373,17 +375,23 @@
                 &lt;div class=&quot;clearfix&quot;&gt;&lt;/div&gt;
                 </code>
                 </pre>
+                <h3>清除padding和margin</h3>
+                <pre>
+                <code class="html">
+                &lt;div class=&quot;no-gutter&quot;&gt;&lt;/div&gt;
+                </code>
+                </pre>
                 <h3>块元素居中</h3>
                 <pre>
                 <code class="html">
                 &lt;div class=&quot;center-block&quot;&gt;&lt;/div&gt;
                 </code>
                 </pre>
-                <h3>无样式的<strong>a</strong>标签</h3>
+                <h3>无点击样式的<strong>a</strong>标签</h3>
                 <pre>
-                <p><a href="" class="nostyle">nostyle</a></p>
+                <p><a href="" class="no-link">no-link</a></p>
                 <code class="html">
-                &lt;a class=&quot;nostyle&quot;&gt;&lt;/a&gt;
+                &lt;a class=&quot;no-link&quot;&gt;&lt;/a&gt;
                 </code>
                 </pre>
                 <h3>absolute、fixed水平垂直居中</h3>
