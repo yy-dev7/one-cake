@@ -86,7 +86,7 @@ $button-fontsize-large: 1.8rem;
         display: block;
         width: 100%;
     }
-    &.large {
+    &.lg {
         @include button-size(large);
     }
     &.sm {

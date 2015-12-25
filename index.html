@@ -33,7 +33,7 @@
             <section id="cakecss-intro">
                 <h1>cakecss简介</h1>
                 <p>cakecss是基于移动端开发的轻量级material design的css库。压缩后只有15k不到。可通过bower安装。或者直接<a href="https://github.com/mervynyang/one-cake/zipball/master">下载zip文件</a>。</p>
-                <p>cakecss主要的样式定义为：<strong>类名 + 辅助样式 + 辅助样式</strong>，比如： <strong>&lt;button class=&quot;button success large&quot;&gt;button&lt;/button&gt;</strong>。可以多个辅助样式一起使用，也能单独使用。</p>
+                <p>cakecss主要的样式定义为：<strong>类名 + 辅助样式 + 辅助样式</strong>，比如： <strong>&lt;button class=&quot;button success lg&quot;&gt;button&lt;/button&gt;</strong>。可以多个辅助样式一起使用，也能单独使用。</p>
                 <br>
                 <p><strong>tips：</strong>在cakecss中，1rem约等于10px。建议所有单位都用rem，因为cakecss rem是根据媒体查询计算出来的。</p>
                 <pre>
@@ -173,12 +173,12 @@
                 <h3>大小类</h3>
                 <button class="button primary sm">sm</button>
                 <button class="button primary">default</button>
-                <button class="button primary large">large</button>
+                <button class="button primary lg">lg</button>
                 <pre>
                 <code class="html">
                 &lt;button class=&quot;button primary sm&quot;&gt;sm&lt;/button&gt;
                 &lt;button class=&quot;button primary&quot;&gt;default&lt;/button&gt;
-                &lt;button class=&quot;button primary large&quot;&gt;large&lt;/button&gt;
+                &lt;button class=&quot;button primary lg&quot;&gt;lg&lt;/button&gt;
                 </code>
                 </pre>
                 <h3>状态类</h3>
@@ -192,6 +192,13 @@
                 &lt;button class=&quot;button danger flat&quot;&gt;flat&lt;/button&gt;
                 &lt;button class=&quot;button primary&quot; disabled&gt;disabled&lt;/button&gt;
                 &lt;button class=&quot;button primary active&quot;&gt;active&lt;/button&gt;
+                </code>
+                </pre>
+                <h3>宽度100%的按钮</h3>
+                <button class="button success block">block</button>
+                <pre>
+                <code class="html">
+                &lt;button class=&quot;button success block&quot;&gt;block&lt;/button&gt;
                 </code>
                 </pre>
             </section>
