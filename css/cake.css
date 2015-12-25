@@ -369,14 +369,6 @@ textarea {
   overflow: auto;
 }
 
-/**
- * Don't inherit the `font-weight` (applied by a rule above).
- * NOTE: the default cannot safely be changed in Chrome and Safari on OS X.
- */
-optgroup {
-  font-weight: bold;
-}
-
 /* Tables
    ========================================================================== */
 /**
@@ -661,12 +653,12 @@ hr {
   clear: both;
 }
 
-a[class="unlink"] {
+a[class="nostyle"] {
   text-decoration: none;
   color: inherit;
 }
 
-a[class="unlink"]:focus {
+a[class="nostyle"]:focus {
   outline: none;
 }
 
