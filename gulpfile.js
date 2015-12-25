@@ -5,6 +5,7 @@ var sass = require('gulp-sass');
 var autoprefixer = require('gulp-autoprefixer');
 var minifyCss = require('gulp-minify-css');
 var rename = require('gulp-rename');
+var sourcemaps = require('gulp-sourcemaps');
 
 gulp.task('sass', function() {
     gulp.src('./sass/*.scss')
@@ -18,9 +19,8 @@ gulp.task('sass', function() {
 
 gulp.task('minify', function() {
     gulp.src('./css/cake.css')
-        .pipe(minifyCss({
-            keepSpecialComments: 0
-        }))
+        .pipe(minifyCss())
+        .pipe(sourcemaps.write())
         .pipe(rename({
             extname: '.min.css'
         }))
