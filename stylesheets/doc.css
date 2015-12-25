@@ -35,3 +35,7 @@ body {
 .doc div[class^="column"],.doc.table-row .cell:last-child {
     border-right: 1px solid #B9B0C7;
 }
+
+.whiteframe-doc {
+    margin-top: 2rem;
+}

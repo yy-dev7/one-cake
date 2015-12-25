@@ -1485,7 +1485,6 @@ label {
   font-weight: 500;
   font-size: 1.4rem;
   color: rgba(0, 0, 0, 0.87);
-  cursor: default;
   height: 5rem;
   line-height: 5rem;
   padding-left: 2.5rem;
@@ -1540,12 +1539,12 @@ img {
      object-fit: cover;
 }
 
-<<<<<<< HEAD
 .img-radius {
   border-radius: 4px;
   -o-object-fit: cover;
      object-fit: cover;
-=======
+}
+
 .whiteframe-1dp {
   box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12);
 }
@@ -1640,5 +1639,4 @@ img {
 
 .whiteframe-24dp {
   box-shadow: 0px 11px 15px -7px rgba(0, 0, 0, 0.2), 0px 24px 38px 3px rgba(0, 0, 0, 0.14), 0px 9px 46px 8px rgba(0, 0, 0, 0.12);
->>>>>>> master
 }
