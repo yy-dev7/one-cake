@@ -1,10 +1,12 @@
 img {
     display: inline-block;
+
     vertical-align: middle;
 }
 
 .img-block {
     display: block;
+
     width: 100%;
 }
 
@@ -12,17 +14,20 @@ img {
     max-width: 100%;
     margin-bottom: 2rem;
     img {
-        @extend .img-block;
         margin-top: 1rem;
+
+        @extend .img-block;
     }
 }
 
 .img-circle {
     border-radius: 1000px;
+
     object-fit: cover;
 }
 
 .img-radius {
     border-radius: 4px;
+
     object-fit: cover;
 }

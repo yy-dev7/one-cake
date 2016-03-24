@@ -1,4 +1,4 @@
-$input-focus-color: #2196F3;
+$input-focus-color: #2196f3;
 $formfield-padding-top: 1.5rem;
 $formfield-margin-bottom: 2rem;
 $formfield-font-size: 1.5rem;
@@ -10,33 +10,41 @@ $form-control-bg-color: #fff;
 $form-control-border-color-focus: #999;
 $form-control-bg-color-focus: #fafafa;
 $form-control-height: 3.75rem;
-$form-control-padding: 0.6rem;
-$select-arrow-color: #C9C9C9;
+$form-control-padding: .6rem;
+$select-arrow-color: #c9c9c9;
 
 @mixin form-field() {
-    display: block;
-    padding-top: $formfield-padding-top;
-    margin-bottom: $formfield-margin-bottom;
     position: relative;
+
+    display: block;
+
+    margin-bottom: $formfield-margin-bottom;
+    padding-top: $formfield-padding-top;
 }
 
 legend {
-    display: block;
-    width: 100%;
-    padding: 0;
-    margin-bottom: 1rem;
     font-size: 1.6rem;
-    color: $default-text-color;
-    line-height: inherit;
     font-weight: 600;
+    line-height: inherit;
+
+    display: block;
+
+    width: 100%;
+    margin-bottom: 1rem;
+    padding: 0;
+
+    color: $default-text-color;
 }
 
 label {
-    display: inline-block;
-    max-width: 100%;
     font-size: 1.5rem;
-    margin-bottom: 0.6rem;
     font-weight: 700;
+
+    display: inline-block;
+
+    max-width: 100%;
+    margin-bottom: .6rem;
+
     cursor: default;
 }
 
@@ -44,22 +52,25 @@ label {
     @include form-field();
     & > input,
     & > textarea {
+        font-size: $formfield-font-size;
+
         display: block;
+
         width: 100%;
-        background-color: transparent;
+        height: $input-height;
+        padding: 0;
+
         color: $default-text-color;
         border: none;
         border-bottom: 1px solid $formfield-bd-color;
-        outline: 0;
-        padding: 0;
-        height: $input-height;
-        box-shadow: none;
         border-radius: 0;
+        outline: 0;
+        background-color: transparent;
         background-image: none;
-        font-size: $formfield-font-size;
+        box-shadow: none;
         &:focus {
-            border-color: $input-focus-color;
             border-width: 2px;
+            border-color: $input-focus-color;
             & ~ label {
                 color: $input-focus-color;
             }
@@ -70,85 +81,105 @@ label {
         margin-bottom: -1px;
     }
     & > label {
-        position: absolute;
-        top: 0;
-        display: block;
-        width: 100%;
-        color: #BDBDBD;
         font-size: 1.2rem;
         font-weight: 400;
         line-height: 1.5rem;
+
+        position: absolute;
+        top: 0;
+
+        display: block;
         overflow-x: hidden;
-        text-overflow: ellipsis;
+
+        width: 100%;
+
         white-space: nowrap;
+        text-overflow: ellipsis;
+
+        color: #bdbdbd;
     }
 }
 
 .form-control {
-    -webkit-appearance: none;
+    font-family: inherit;
+    font-size: $formfield-font-size;
+
+    display: block;
+
+    width: 100%;
+    height: $form-control-height;
+    margin: 0 0 1.2rem 0;
+    padding: $form-control-padding;
+
+    transition: border-color .15s linear, background .15s linear;
+
+    color: rgba(0, 0, 0, .75);
+    border-width: $form-control-border-width;
+    border-style: solid;
+    border-color: $form-control-border-color;
     border-radius: 0;
     background-color: $form-control-bg-color;
-    border-style: solid;
-    border-width: $form-control-border-width;
-    border-color: $form-control-border-color;
-    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
-    color: rgba(0, 0, 0, 0.75);
-    display: block;
-    width: 100%;
-    font-family: inherit;
-    transition: border-color 0.15s linear, background 0.15s linear;
-    margin: 0 0 1.2rem 0;
-    height: $form-control-height;
-    padding: $form-control-padding;
-    font-size: $formfield-font-size;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, .1);
+
+    -webkit-appearance: none;
     &:focus {
-        background-color: $form-control-bg-color-focus;
         border-color: $form-control-border-color-focus;
         outline: none;
+        background-color: $form-control-bg-color-focus;
     }
 }
 
 .selectfield {
     @include form-field();
     & > select {
-        -webkit-appearance: none;
+        font-size: $formfield-font-size;
+
         display: block;
-        height: 32px;
+
         width: 100%;
-        outline: 0;
+        height: 32px;
+        padding: 0 25px 0 0;
+
+        cursor: pointer;
+
+        color: $default-text-color;
         border: none;
         border-bottom: 1px solid $formfield-bd-color;
         border-radius: 0;
-        box-shadow: none;
+        outline: 0;
         background-color: transparent;
-        cursor: pointer;
-        color: $default-text-color;
-        font-size: $formfield-font-size;
-        padding: 0 25px 0 0;
+        box-shadow: none;
+
+        -webkit-appearance: none;
         &:focus {
-            outline: 0;
             height: 33px;
             margin-bottom: -1px;
-            border-color: $input-focus-color;
+
             border-width: 2px;
+            border-color: $input-focus-color;
+            outline: 0;
         }
         &:disabled {
-            color: $formfield-bd-color;
             cursor: not-allowed;
-            background-color: transparent;
+
             opacity: 1;
+            color: $formfield-bd-color;
+            background-color: transparent;
         }
     }
     &::after {
-        content: '';
-        width: 0;
-        height: 0;
-        border-style: solid;
-        border-width: 8px 4px 0 4px;
-        border-color: $select-arrow-color transparent transparent transparent;
         position: absolute;
         top: 30px;
         right: 0;
+
+        width: 0;
+        height: 0;
+
+        content: '';
+
+        border-width: 8px 4px 0 4px;
+        border-style: solid;
+        border-color: $select-arrow-color transparent transparent transparent;
     }
 }
 
@@ -156,92 +187,108 @@ label {
     & + & {
         margin-top: 1rem;
     }
-    & > input[type="checkbox"] {
+    & > input[type='checkbox'] {
         display: none;
         &:checked + label::before {
+            opacity: .5;
             background: inherit;
-            opacity: 0.5;
         }
         &:checked + label::after {
-            background: inherit;
             left: 20px;
+
+            background: inherit;
         }
     }
     & > label {
-        cursor: pointer;
-        height: 0px;
         position: relative;
+
         width: 40px;
+        height: 0;
+
+        cursor: pointer;
         &::before {
-            background: #111;
-            box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.5);
-            border-radius: 8px;
-            content: '';
+            position: absolute;
+
+            width: 40px;
             height: 16px;
             margin-top: -8px;
-            position: absolute;
-            opacity: 0.3;
-            -webkit-transition: all 0.4s ease-in-out;
-            transition: all 0.4s ease-in-out;
-            width: 40px;
+
+            content: '';
+            -webkit-transition: all .4s ease-in-out;
+                    transition: all .4s ease-in-out;
+
+            opacity: .3;
+            border-radius: 8px;
+            background: #111;
+            box-shadow: inset 0 0 10px rgba(0, 0, 0, .5);
         }
         &::after {
-            background: white;
-            border-radius: 1000px;
-            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
-            content: '';
-            height: 24px;
-            left: -4px;
-            margin-top: -8px;
             position: absolute;
             top: -4px;
-            -webkit-transition: all 0.3s ease-in-out;
-            transition: all 0.3s ease-in-out;
+            left: -4px;
+
             width: 24px;
+            height: 24px;
+            margin-top: -8px;
+
+            content: '';
+            -webkit-transition: all .3s ease-in-out;
+                    transition: all .3s ease-in-out;
+
+            border-radius: 1000px;
+            background: white;
+            box-shadow: 0 0 5px rgba(0, 0, 0, .3);
         }
     }
 }
 
 .checkboxfield {
     position: relative;
-    & > input[type="checkbox"] {
+    & > input[type='checkbox'] {
         display: none;
         &:checked ~ label .box {
-            background: $primary-color;
             border: none;
+            background: $primary-color;
         }
         &:checked ~ label .check {
-            opacity: 1;
             -webkit-transform: rotate(45deg);
-            transform: rotate(45deg);
+                    transform: rotate(45deg);
+
+            opacity: 1;
         }
     }
     & > label {
-        padding-left: 30px;
-        cursor: pointer;
         margin-bottom: 0;
+        padding-left: 30px;
+
+        cursor: pointer;
         span {
-            display: block;
             position: absolute;
             left: 0;
+
+            display: block;
         }
         .box {
-            background: #fff;
-            border: 2px solid #ccc;
-            height: 20px;
-            width: 20px;
             z-index: 9;
+
+            width: 20px;
+            height: 20px;
+
+            border: 2px solid #ccc;
+            background: #fff;
         }
         .check {
+            z-index: 10;
             top: 0;
             left: 7px;
+
             width: 7px;
             height: 15px;
+
+            opacity: 0;
             border: 2px solid #fff;
             border-top: none;
             border-left: none;
-            opacity: 0;
-            z-index: 10;
         }
     }
 }

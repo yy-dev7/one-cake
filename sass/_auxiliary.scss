@@ -1,8 +1,9 @@
 @mixin clearfix {
     &:before,
     &:after {
-        content: " ";
         display: table;
+
+        content: ' ';
     }
     &:after {
         clear: both;
@@ -27,6 +28,7 @@
     position: absolute;
     top: 50%;
     left: 50%;
+
     transform: translate3d(-50%, -50%, 0);
     text-align: center;
 }
@@ -35,6 +37,7 @@
     position: fixed;
     top: 50%;
     left: 50%;
+
     transform: translate3d(-50%, -50%, 0);
     text-align: center;
 }
@@ -77,17 +80,19 @@
 }
 
 .container {
-    padding-left: 1.2rem;
-    padding-right: 1.2rem;
-    margin-left: auto;
     margin-right: auto;
+    margin-left: auto;
+    padding-right: 1.2rem;
+    padding-left: 1.2rem;
+
     @include clearfix();
 }
 
 .center-block {
     display: block;
-    margin-left: auto;
+
     margin-right: auto;
+    margin-left: auto;
 }
 
 .center-fixed {
@@ -102,8 +107,9 @@
     @include clearfix();
 }
 
-a[class="no-link"] {
+a[class='no-link-style'] {
     text-decoration: none;
+
     color: inherit;
     &:focus {
         outline: none;

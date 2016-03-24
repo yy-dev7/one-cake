@@ -5,23 +5,25 @@ $panel-border-radius: 4px;
 $panel-heading-color: #333;
 $panel-header-bg-color: #f5f5f5;
 $panel-title-font-size: 1.4rem;
-$panel-pading:1rem 1.5rem;
+$panel-pading: 1rem 1.5rem;
 
 .card {
-    padding: 15px;
     margin-bottom: 20px;
+    padding: 15px;
+
     border-radius: 0;
-    background-color: #FFF;
+    background-color: #fff;
     box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .16), 0 0 2px 0 rgba(0, 0, 0, .12);
 }
 
 .panel {
     margin-bottom: $panel-margin-bottom;
-    background-color: $panel-bg-color;
+
     border: 1px solid transparent;
-    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
-    box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
     border-color: $panel-border-color;
+    background-color: $panel-bg-color;
+    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+            box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
     &.radius {
         border-radius: $panel-border-radius;
         .panel-heading {
@@ -37,25 +39,29 @@ $panel-pading:1rem 1.5rem;
 
 .panel-heading {
     padding: $panel-pading;
-    border-bottom: 1px solid transparent;
+
     color: $panel-heading-color;
+    border-color: $panel-border-color;
+    border-bottom: 1px solid transparent;
     background-color: $panel-header-bg-color;
-    border-color: $panel-border-color
 }
 
 .panel-body {
-    padding: 15px;
+    padding: 1.5rem;
 }
 
 .panel-footer {
     padding: $panel-pading;
+
+    border-top: 1px solid $panel-border-color;
     background-color: $panel-header-bg-color;
-    border-top: 1px solid $panel-border-color
 }
 
 .panel-title {
+    font-size: $panel-title-font-size;
+
     margin-top: 0;
     margin-bottom: 0;
-    font-size: $panel-title-font-size;
+
     color: inherit;
 }

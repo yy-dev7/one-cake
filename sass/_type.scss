@@ -1,5 +1,5 @@
-$iphone5-max-width : 321px;
-$iphone6-max-width : 376px;
+$iphone5-max-width: 321px;
+$iphone6-max-width: 376px;
 $iphone6p-min-width: 410px;
 //定义media-queries的最小最大宽度,主要以iPhone各型号为标准
 @mixin iphone5() {
@@ -39,13 +39,13 @@ html {
 }
 
 @include iphone5() {
-     html {
+    html {
         font-size: 9px;
     }
 }
 
 @include iphone6p() {
-     html {
+    html {
         font-size: 11px;
     }
 }
@@ -56,18 +56,22 @@ textarea {
 }
 
 body {
-    background: #fff;
-    color: #333;
-    padding: 0;
-    margin: 0 auto;
     font-family: Arial,Helvetica,sans-serif;
+    font-size: 140%;
     font-weight: normal;
     font-style: normal;
-    font-size: 140%;
     line-height: 1.5;
+
     position: relative;
-    cursor: auto;
+
     max-width: 600px;
+    margin: 0 auto;
+    padding: 0;
+
+    cursor: auto;
+
+    color: #333;
+    background: #fff;
 }
 
 div,
@@ -102,20 +106,25 @@ dl {
     font-family: inherit;
     font-size: 1.4rem;
     line-height: 1.6;
-    list-style-position: outside;
+
     margin-bottom: 1.11111rem;
+
+    list-style-position: outside;
 }
 
 time {
     font-size: $time-fontsize;
+
     color: $time-color;
 }
 
 a {
-    color: $anchor-font-color;
-    line-height: inherit;
     font-size: inherit;
+    line-height: inherit;
+
     text-decoration: $anchor-text-decoration;
+
+    color: $anchor-font-color;
     &:hover,
     &:focus {
         color: $anchor-font-color-hover;
@@ -137,13 +146,16 @@ h3,
 h4,
 h5,
 h6 {
-    color: #222;
     font-family: inherit;
-    font-style: normal;
     font-weight: normal;
+    font-style: normal;
     line-height: 1.4;
-    margin-bottom: 0.6rem;
-    margin-top: 0.3rem;
+
+    margin-top: .3rem;
+    margin-bottom: .6rem;
+
+    color: #222;
+
     text-rendering: optimizeLegibility;
 }
 
@@ -172,9 +184,15 @@ h6 {
 }
 
 hr {
-    border: solid $hr-border-color;
-    border-width: $hr-border-width 0 0;
     clear: both;
+
     height: 0;
     margin: $hr-margin 0;
+
+    border: solid $hr-border-color;
+    border-width: $hr-border-width 0 0;
+}
+
+a, img {
+    -webkit-touch-callout: none; /* 禁止长按链接与图片弹出菜单 */
 }

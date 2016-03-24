@@ -1,10 +1,12 @@
 @for $col from 1 through 12 {
     .column-#{$col} {
-        width: $col / 12 * 100%;
         position: relative;
-        padding-left: 1rem;
-        padding-right: 1rem;
+
         float: left;
+
+        width: $col / 12 * 100%;
+        padding-right: 1rem;
+        padding-left: 1rem;
     }
 }
 
@@ -15,30 +17,35 @@
 }
 
 .row {
-    @include clearfix();
-    margin: 0 auto;
     width: 100%;
+    margin: 0 auto;
+
+    @include clearfix();
     .row {
-        @include clearfix();
-        margin: 0 -1rem;
-        max-width: none;
         width: auto;
+        max-width: none;
+        margin: 0 -1rem;
+
+        @include clearfix();
     }
 }
 
 .no-gutter {
-    padding: 0 !important;
     margin: 0 !important;
+    padding: 0 !important;
 }
 
 .visible-block {
-    @include clearfix();
     display: block !important;
+
+    @include clearfix();
 }
 
 .table-row {
     display: table;
+
     width: 100%;
+
     table-layout: fixed; //tableLayout 属性用来显示表格单元格、行、列的算法规则。
     border-spacing: 0; //规定相邻单元的边框之间的距离。如果定义两个 length 参数，那么第一个设置水平间距，而第二个设置垂直间距。
     .cell {

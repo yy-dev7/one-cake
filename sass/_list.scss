@@ -4,42 +4,50 @@ $list-group-item-padding-left: 1.5rem;
 $list-group-item-bg-color: #fff;
 $list-group-item-bd-width: 1px;
 $list-group-bd-radius: 4px;
-$badge-color: #908D8D;
+$badge-color: #908d8d;
 
 .list-group {
-    padding-left: 0;
-    list-style: none;
     margin: 0 0 $list-group-margin-bottom;
+    padding-left: 0;
+
+    list-style: none;
 }
 
 .list-group {
     .item {
         position: relative;
+
         display: block;
-        padding: $list-group-item-padding-top $list-group-item-padding-left;
+
         margin-bottom: -$list-group-item-bd-width;
-        background-color: $list-group-item-bg-color;
+        padding: $list-group-item-padding-top $list-group-item-padding-left;
+
         border: $list-group-item-bd-width solid #ddd;
-        & >.badge {
-            float: right;
-            display: inline-block;
-            min-width: 1rem;
-            padding: 0.3rem 0.7rem;
+        background-color: $list-group-item-bg-color;
+        & > .badge {
             font-size: 1.2rem;
             font-weight: 700;
             line-height: 1;
-            color: #fff;
+
+            display: inline-block;
+            float: right;
+
+            min-width: 1rem;
+            padding: .3rem .7rem;
+
             text-align: center;
-            white-space: nowrap;
             vertical-align: middle;
-            background-color: $badge-color;
+            white-space: nowrap;
+
+            color: #fff;
             border-radius: 10px;
+            background-color: $badge-color;
         }
         &.active,
         &.active:focus,
         &.active:hover {
+            color: #fff;
             background-color: $primary-color;
-            color:#fff;
         }
     }
     &.radius {
@@ -48,16 +56,17 @@ $badge-color: #908D8D;
             border-top-right-radius: $list-group-bd-radius;
         }
         .item:last-child {
-            border-bottom-left-radius: $list-group-bd-radius;
             border-bottom-right-radius: $list-group-bd-radius;
+            border-bottom-left-radius: $list-group-bd-radius;
         }
     }
     a.item:focus,
     a.item:hover,
     button.item:focus,
     button.item:hover {
-        color: #555;
         text-decoration: none;
+
+        color: #555;
         background-color: #f5f5f5;
     }
     a {
