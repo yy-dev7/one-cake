@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*! cake.css v0.0.2 | MIT License | github.com/mervynyang/one-cake */
 /**
  * 1. Set default font family to sans-serif.
@@ -124,15 +125,15 @@ dfn {
  */
 h1 {
   font-size: 2em;
-  margin: 0.67em 0;
+  margin: .67em 0;
 }
 
 /**
  * Address styling not present in IE 8/9.
  */
 mark {
-  background: #ff0;
   color: #000;
+  background: #ff0;
 }
 
 /**
@@ -154,11 +155,11 @@ sup {
 }
 
 sup {
-  top: -0.5em;
+  top: -.5em;
 }
 
 sub {
-  bottom: -0.25em;
+  bottom: -.25em;
 }
 
 /* Embedded content
@@ -228,12 +229,12 @@ input,
 optgroup,
 select,
 textarea {
-  color: inherit;
-  /* 1 */
   font: inherit;
   /* 2 */
   margin: 0;
   /* 3 */
+  color: inherit;
+  /* 1 */
 }
 
 /**
@@ -262,13 +263,13 @@ select {
  *    `input` and others.
  */
 button,
-html input[type="button"],
-input[type="reset"],
-input[type="submit"] {
-  -webkit-appearance: button;
-  /* 2 */
+html input[type='button'],
+input[type='reset'],
+input[type='submit'] {
   cursor: pointer;
   /* 3 */
+  -webkit-appearance: button;
+  /* 2 */
 }
 
 /**
@@ -284,8 +285,8 @@ html input[disabled] {
  */
 button::-moz-focus-inner,
 input::-moz-focus-inner {
-  border: 0;
   padding: 0;
+  border: 0;
 }
 
 /**
@@ -303,8 +304,8 @@ input {
  * 1. Address box sizing set to `content-box` in IE 8/9/10.
  * 2. Remove excess padding in IE 8/9/10.
  */
-input[type="checkbox"],
-input[type="radio"] {
+input[type='checkbox'],
+input[type='radio'] {
   box-sizing: border-box;
   /* 1 */
   padding: 0;
@@ -316,8 +317,8 @@ input[type="radio"] {
  * `font-size` values of the `input`, it causes the cursor style of the
  * decrement button to change from `default` to `text`.
  */
-input[type="number"]::-webkit-inner-spin-button,
-input[type="number"]::-webkit-outer-spin-button {
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
   height: auto;
 }
 
@@ -325,11 +326,11 @@ input[type="number"]::-webkit-outer-spin-button {
  * 1. Address `appearance` set to `searchfield` in Safari and Chrome.
  * 2. Address `box-sizing` set to `border-box` in Safari and Chrome.
  */
-input[type="search"] {
-  -webkit-appearance: textfield;
-  /* 1 */
+input[type='search'] {
   box-sizing: content-box;
   /* 2 */
+  -webkit-appearance: textfield;
+  /* 1 */
 }
 
 /**
@@ -337,8 +338,8 @@ input[type="search"] {
  * Safari (but not Chrome) clips the cancel button when the search input has
  * padding (and `textfield` appearance).
  */
-input[type="search"]::-webkit-search-cancel-button,
-input[type="search"]::-webkit-search-decoration {
+input[type='search']::-webkit-search-cancel-button,
+input[type='search']::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -346,9 +347,9 @@ input[type="search"]::-webkit-search-decoration {
  * Define consistent border, margin, and padding.
  */
 fieldset {
-  border: 1px solid #c0c0c0;
   margin: 0 2px;
-  padding: 0.35em 0.625em 0.75em;
+  padding: .35em .625em .75em;
+  border: 1px solid #c0c0c0;
 }
 
 /**
@@ -356,10 +357,10 @@ fieldset {
  * 2. Remove padding so people aren't caught out if they zero out fieldsets.
  */
 legend {
-  border: 0;
-  /* 1 */
   padding: 0;
   /* 2 */
+  border: 0;
+  /* 1 */
 }
 
 /**
@@ -375,8 +376,8 @@ textarea {
  * Remove most spacing between table cells.
  */
 table {
-  border-collapse: collapse;
   border-spacing: 0;
+  border-collapse: collapse;
 }
 
 td,
@@ -396,24 +397,7 @@ html * {
 
 html {
   font-size: 10px;
-}
-
-@media screen and (max-width: 376px) {
-  html {
-    font-size: 10px;
-  }
-}
-
-@media screen and (max-width: 321px) {
-  html {
-    font-size: 9px;
-  }
-}
-
-@media screen and (min-width: 410px) {
-  html {
-    font-size: 11px;
-  }
+  font-size: calc(100vw/37.5);
 }
 
 textarea {
@@ -422,18 +406,18 @@ textarea {
 }
 
 body {
-  background: #fff;
-  color: #333;
-  padding: 0;
-  margin: 0 auto;
   font-family: Arial,Helvetica,sans-serif;
+  font-size: 140%;
   font-weight: normal;
   font-style: normal;
-  font-size: 140%;
   line-height: 1.5;
   position: relative;
-  cursor: auto;
   max-width: 600px;
+  margin: 0 auto;
+  padding: 0;
+  cursor: auto;
+  color: #333;
+  background: #fff;
 }
 
 div,
@@ -464,10 +448,10 @@ ul,
 ol,
 dl {
   font-family: inherit;
-  font-size: 1.4rem;
+  font-size: 14px;
   line-height: 1.6;
-  list-style-position: outside;
   margin-bottom: 1.11111rem;
+  list-style-position: outside;
 }
 
 time {
@@ -476,10 +460,10 @@ time {
 }
 
 a {
-  color: #008CBA;
-  line-height: inherit;
   font-size: inherit;
+  line-height: inherit;
   text-decoration: none;
+  color: #008CBA;
 }
 
 a:hover, a:focus {
@@ -502,46 +486,51 @@ h3,
 h4,
 h5,
 h6 {
-  color: #222;
   font-family: inherit;
-  font-style: normal;
   font-weight: normal;
+  font-style: normal;
   line-height: 1.4;
-  margin-bottom: 0.6rem;
-  margin-top: 0.3rem;
+  margin-top: .3rem;
+  margin-bottom: .6rem;
+  color: #222;
   text-rendering: optimizeLegibility;
 }
 
 h1 {
-  font-size: 2.95rem;
+  font-size: 28px;
 }
 
 h2 {
-  font-size: 2.55rem;
+  font-size: 24px;
 }
 
 h3 {
-  font-size: 2.15rem;
+  font-size: 20px;
 }
 
 h4 {
-  font-size: 1.75rem;
+  font-size: 18px;
 }
 
 h5 {
-  font-size: 1.35rem;
+  font-size: 14px;
 }
 
 h6 {
-  font-size: 1rem;
+  font-size: 12px;
 }
 
 hr {
-  border: solid #DDD;
-  border-width: 1px 0 0;
   clear: both;
   height: 0;
   margin: 1.4rem 0;
+  border: solid #DDD;
+  border-width: 1px 0 0;
+}
+
+a, img {
+  -webkit-touch-callout: none;
+  /* 禁止长按链接与图片弹出菜单 */
 }
 
 .text-center {
@@ -605,15 +594,15 @@ hr {
 }
 
 .container {
-  padding-left: 1.2rem;
-  padding-right: 1.2rem;
-  margin-left: auto;
   margin-right: auto;
+  margin-left: auto;
+  padding-right: 1.2rem;
+  padding-left: 1.2rem;
 }
 
 .container:before, .container:after {
-  content: " ";
   display: table;
+  content: ' ';
 }
 
 .container:after {
@@ -622,8 +611,8 @@ hr {
 
 .center-block {
   display: block;
-  margin-left: auto;
   margin-right: auto;
+  margin-left: auto;
 }
 
 .center-fixed {
@@ -645,20 +634,20 @@ hr {
 }
 
 .clearfix:before, .clearfix:after {
-  content: " ";
   display: table;
+  content: ' ';
 }
 
 .clearfix:after {
   clear: both;
 }
 
-a[class="no-link"] {
+a[class='no-link-style'] {
   text-decoration: none;
   color: inherit;
 }
 
-a[class="no-link"]:focus {
+a[class='no-link-style']:focus {
   outline: none;
 }
 
@@ -668,99 +657,99 @@ a[class="no-link"]:focus {
 }
 
 .column-1 {
-  width: 8.33333%;
   position: relative;
-  padding-left: 1rem;
-  padding-right: 1rem;
   float: left;
+  width: 8.33333%;
+  padding-right: 1rem;
+  padding-left: 1rem;
 }
 
 .column-2 {
-  width: 16.66667%;
   position: relative;
-  padding-left: 1rem;
-  padding-right: 1rem;
   float: left;
+  width: 16.66667%;
+  padding-right: 1rem;
+  padding-left: 1rem;
 }
 
 .column-3 {
-  width: 25%;
   position: relative;
-  padding-left: 1rem;
-  padding-right: 1rem;
   float: left;
+  width: 25%;
+  padding-right: 1rem;
+  padding-left: 1rem;
 }
 
 .column-4 {
-  width: 33.33333%;
   position: relative;
-  padding-left: 1rem;
-  padding-right: 1rem;
   float: left;
+  width: 33.33333%;
+  padding-right: 1rem;
+  padding-left: 1rem;
 }
 
 .column-5 {
-  width: 41.66667%;
   position: relative;
-  padding-left: 1rem;
-  padding-right: 1rem;
   float: left;
+  width: 41.66667%;
+  padding-right: 1rem;
+  padding-left: 1rem;
 }
 
 .column-6 {
-  width: 50%;
   position: relative;
-  padding-left: 1rem;
-  padding-right: 1rem;
   float: left;
+  width: 50%;
+  padding-right: 1rem;
+  padding-left: 1rem;
 }
 
 .column-7 {
-  width: 58.33333%;
   position: relative;
-  padding-left: 1rem;
-  padding-right: 1rem;
   float: left;
+  width: 58.33333%;
+  padding-right: 1rem;
+  padding-left: 1rem;
 }
 
 .column-8 {
-  width: 66.66667%;
   position: relative;
-  padding-left: 1rem;
-  padding-right: 1rem;
   float: left;
+  width: 66.66667%;
+  padding-right: 1rem;
+  padding-left: 1rem;
 }
 
 .column-9 {
-  width: 75%;
   position: relative;
-  padding-left: 1rem;
-  padding-right: 1rem;
   float: left;
+  width: 75%;
+  padding-right: 1rem;
+  padding-left: 1rem;
 }
 
 .column-10 {
-  width: 83.33333%;
   position: relative;
-  padding-left: 1rem;
-  padding-right: 1rem;
   float: left;
+  width: 83.33333%;
+  padding-right: 1rem;
+  padding-left: 1rem;
 }
 
 .column-11 {
-  width: 91.66667%;
   position: relative;
-  padding-left: 1rem;
-  padding-right: 1rem;
   float: left;
+  width: 91.66667%;
+  padding-right: 1rem;
+  padding-left: 1rem;
 }
 
 .column-12 {
-  width: 100%;
   position: relative;
-  padding-left: 1rem;
-  padding-right: 1rem;
   float: left;
+  width: 100%;
+  padding-right: 1rem;
+  padding-left: 1rem;
 }
 
 .offset-1 {
@@ -812,13 +801,13 @@ a[class="no-link"]:focus {
 }
 
 .row {
-  margin: 0 auto;
   width: 100%;
+  margin: 0 auto;
 }
 
 .row:before, .row:after {
-  content: " ";
   display: table;
+  content: ' ';
 }
 
 .row:after {
@@ -826,14 +815,14 @@ a[class="no-link"]:focus {
 }
 
 .row .row {
-  margin: 0 -1rem;
-  max-width: none;
   width: auto;
+  max-width: none;
+  margin: 0 -1rem;
 }
 
 .row .row:before, .row .row:after {
-  content: " ";
   display: table;
+  content: ' ';
 }
 
 .row .row:after {
@@ -841,8 +830,8 @@ a[class="no-link"]:focus {
 }
 
 .no-gutter {
-  padding: 0 !important;
   margin: 0 !important;
+  padding: 0 !important;
 }
 
 .visible-block {
@@ -850,8 +839,8 @@ a[class="no-link"]:focus {
 }
 
 .visible-block:before, .visible-block:after {
-  content: " ";
   display: table;
+  content: ' ';
 }
 
 .visible-block:after {
@@ -874,58 +863,58 @@ a[class="no-link"]:focus {
 }
 
 legend {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: inherit;
   display: block;
   width: 100%;
-  padding: 0;
   margin-bottom: 1rem;
-  font-size: 1.6rem;
+  padding: 0;
   color: rgba(0, 0, 0, 0.87);
-  line-height: inherit;
-  font-weight: 600;
 }
 
 label {
+  font-size: 15px;
+  font-weight: 700;
   display: inline-block;
   max-width: 100%;
-  font-size: 1.5rem;
-  margin-bottom: 0.6rem;
-  font-weight: 700;
+  margin-bottom: .6rem;
   cursor: default;
 }
 
 .textfield {
-  display: block;
-  padding-top: 1.5rem;
-  margin-bottom: 2rem;
   position: relative;
+  display: block;
+  margin-bottom: 2rem;
+  padding-top: 1.5rem;
 }
 
 .textfield > input,
 .textfield > textarea {
+  font-size: 15px;
   display: block;
   width: 100%;
-  background-color: transparent;
+  height: 32px;
+  padding: 0;
   color: rgba(0, 0, 0, 0.87);
   border: none;
   border-bottom: 1px solid rgba(0, 0, 0, 0.26);
-  outline: 0;
-  padding: 0;
-  height: 32px;
-  box-shadow: none;
   border-radius: 0;
+  outline: 0;
+  background-color: transparent;
   background-image: none;
-  font-size: 1.5rem;
+  box-shadow: none;
 }
 
 .textfield > input:focus,
 .textfield > textarea:focus {
-  border-color: #2196F3;
   border-width: 2px;
+  border-color: #2196f3;
 }
 
 .textfield > input:focus ~ label,
 .textfield > textarea:focus ~ label {
-  color: #2196F3;
+  color: #2196f3;
 }
 
 .textfield > input:focus {
@@ -934,229 +923,228 @@ label {
 }
 
 .textfield > label {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.5rem;
   position: absolute;
   top: 0;
   display: block;
-  width: 100%;
-  color: #BDBDBD;
-  font-size: 1.2rem;
-  font-weight: 400;
-  line-height: 1.5rem;
   overflow-x: hidden;
-  text-overflow: ellipsis;
+  width: 100%;
   white-space: nowrap;
+  text-overflow: ellipsis;
+  color: #bdbdbd;
 }
 
 .form-control {
-  -webkit-appearance: none;
-  border-radius: 0;
-  background-color: #fff;
-  border-style: solid;
-  border-width: 1px;
-  border-color: #ccc;
-  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
-  color: rgba(0, 0, 0, 0.75);
+  font-family: inherit;
+  font-size: 15px;
   display: block;
   width: 100%;
-  font-family: inherit;
-  -webkit-transition: border-color 0.15s linear, background 0.15s linear;
-  transition: border-color 0.15s linear, background 0.15s linear;
-  margin: 0 0 1.2rem 0;
   height: 3.75rem;
+  margin: 0 0 1.2rem 0;
   padding: 0.6rem;
-  font-size: 1.5rem;
+  -webkit-transition: border-color .15s linear, background .15s linear;
+  transition: border-color .15s linear, background .15s linear;
+  color: rgba(0, 0, 0, 0.75);
+  border-width: 1px;
+  border-style: solid;
+  border-color: #ccc;
+  border-radius: 0;
+  background-color: #fff;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+  -webkit-appearance: none;
 }
 
 .form-control:focus {
-  background-color: #fafafa;
   border-color: #999;
   outline: none;
+  background-color: #fafafa;
 }
 
 .selectfield {
-  display: block;
-  padding-top: 1.5rem;
-  margin-bottom: 2rem;
   position: relative;
+  display: block;
+  margin-bottom: 2rem;
+  padding-top: 1.5rem;
 }
 
 .selectfield > select {
-  -webkit-appearance: none;
+  font-size: 15px;
   display: block;
-  height: 32px;
   width: 100%;
-  outline: 0;
+  height: 32px;
+  padding: 0 25px 0 0;
+  cursor: pointer;
+  color: rgba(0, 0, 0, 0.87);
   border: none;
   border-bottom: 1px solid rgba(0, 0, 0, 0.26);
   border-radius: 0;
-  box-shadow: none;
+  outline: 0;
   background-color: transparent;
-  cursor: pointer;
-  color: rgba(0, 0, 0, 0.87);
-  font-size: 1.5rem;
-  padding: 0 25px 0 0;
+  box-shadow: none;
+  -webkit-appearance: none;
 }
 
 .selectfield > select:focus {
-  outline: 0;
   height: 33px;
   margin-bottom: -1px;
-  border-color: #2196F3;
   border-width: 2px;
+  border-color: #2196f3;
+  outline: 0;
 }
 
 .selectfield > select:disabled {
-  color: rgba(0, 0, 0, 0.26);
   cursor: not-allowed;
-  background-color: transparent;
   opacity: 1;
+  color: rgba(0, 0, 0, 0.26);
+  background-color: transparent;
 }
 
 .selectfield::after {
-  content: '';
-  width: 0;
-  height: 0;
-  border-style: solid;
-  border-width: 8px 4px 0 4px;
-  border-color: #C9C9C9 transparent transparent transparent;
   position: absolute;
   top: 30px;
   right: 0;
+  width: 0;
+  height: 0;
+  content: '';
+  border-width: 8px 4px 0 4px;
+  border-style: solid;
+  border-color: #c9c9c9 transparent transparent transparent;
 }
 
 .switchfield + .switchfield {
   margin-top: 1rem;
 }
 
-.switchfield > input[type="checkbox"] {
+.switchfield > input[type='checkbox'] {
   display: none;
 }
 
-.switchfield > input[type="checkbox"]:checked + label::before {
+.switchfield > input[type='checkbox']:checked + label::before {
+  opacity: .5;
   background: inherit;
-  opacity: 0.5;
 }
 
-.switchfield > input[type="checkbox"]:checked + label::after {
-  background: inherit;
+.switchfield > input[type='checkbox']:checked + label::after {
   left: 20px;
+  background: inherit;
 }
 
 .switchfield > label {
-  cursor: pointer;
-  height: 0px;
   position: relative;
   width: 40px;
+  height: 0;
+  cursor: pointer;
 }
 
 .switchfield > label::before {
-  background: #111;
-  box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.5);
-  border-radius: 8px;
-  content: '';
+  position: absolute;
+  width: 40px;
   height: 16px;
   margin-top: -8px;
-  position: absolute;
-  opacity: 0.3;
-  -webkit-transition: all 0.4s ease-in-out;
-  transition: all 0.4s ease-in-out;
-  width: 40px;
+  content: '';
+  -webkit-transition: all .4s ease-in-out;
+  transition: all .4s ease-in-out;
+  opacity: .3;
+  border-radius: 8px;
+  background: #111;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 .switchfield > label::after {
-  background: white;
-  border-radius: 1000px;
-  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
-  content: '';
-  height: 24px;
-  left: -4px;
-  margin-top: -8px;
   position: absolute;
   top: -4px;
-  -webkit-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
+  left: -4px;
   width: 24px;
+  height: 24px;
+  margin-top: -8px;
+  content: '';
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+  border-radius: 1000px;
+  background: white;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
 }
 
 .checkboxfield {
   position: relative;
 }
 
-.checkboxfield > input[type="checkbox"] {
+.checkboxfield > input[type='checkbox'] {
   display: none;
 }
 
-.checkboxfield > input[type="checkbox"]:checked ~ label .box {
-  background: #1077CF;
+.checkboxfield > input[type='checkbox']:checked ~ label .box {
   border: none;
+  background: #1077CF;
 }
 
-.checkboxfield > input[type="checkbox"]:checked ~ label .check {
-  opacity: 1;
+.checkboxfield > input[type='checkbox']:checked ~ label .check {
   -webkit-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-      transform: rotate(45deg);
+  transform: rotate(45deg);
+  opacity: 1;
 }
 
 .checkboxfield > label {
+  margin-bottom: 0;
   padding-left: 30px;
   cursor: pointer;
-  margin-bottom: 0;
 }
 
 .checkboxfield > label span {
-  display: block;
   position: absolute;
   left: 0;
+  display: block;
 }
 
 .checkboxfield > label .box {
-  background: #fff;
-  border: 2px solid #ccc;
-  height: 20px;
-  width: 20px;
   z-index: 9;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #ccc;
+  background: #fff;
 }
 
 .checkboxfield > label .check {
+  z-index: 10;
   top: 0;
   left: 7px;
   width: 7px;
   height: 15px;
+  opacity: 0;
   border: 2px solid #fff;
   border-top: none;
   border-left: none;
-  opacity: 0;
-  z-index: 10;
 }
 
 .button {
-  -webkit-appearance: none;
-  -webkit-user-select: none;
-  display: inline-block;
-  border-style: solid;
-  border-width: 0;
+  font-size: 15px;
   font-weight: normal;
   line-height: normal;
   position: relative;
+  display: inline-block;
+  padding: 1rem 2.2rem;
+  cursor: pointer;
+  -webkit-user-select: none;
   text-align: center;
   vertical-align: middle;
   text-decoration: none;
-  cursor: pointer;
-  padding: 1rem 2.2rem;
-  font-size: 1.5rem;
-  background-color: #fff;
+  border-width: 0;
+  border-style: solid;
+  -webkit-appearance: none;
   color: rgba(0, 0, 0, 0.87);
+  background-color: #fff;
 }
 
 .button.active, .button:active, .button:focus {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4);
   opacity: .75;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4);
 }
 
 .button.flat {
-  background-color: transparent;
   color: #fff;
+  background-color: transparent;
   box-shadow: none;
 }
 
@@ -1199,28 +1187,28 @@ label {
 }
 
 .button.lg {
+  font-size: 18px;
   padding: 1.375rem 2.6rem;
-  font-size: 1.8rem;
 }
 
 .button.sm {
+  font-size: 12px;
   padding: 0.8rem 1.8rem;
-  font-size: 1.25rem;
 }
 
 .button.primary {
-  background-color: #1077CF;
   color: #fff;
+  background-color: #1077CF;
 }
 
 .button.primary.active, .button.primary:active, .button.primary:focus {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4);
   opacity: .75;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4);
 }
 
 .button.primary.flat {
-  background-color: transparent;
   color: #1077CF;
+  background-color: transparent;
   box-shadow: none;
 }
 
@@ -1229,18 +1217,18 @@ label {
 }
 
 .button.success {
-  background-color: #3DCC7E;
   color: #fff;
+  background-color: #3DCC7E;
 }
 
 .button.success.active, .button.success:active, .button.success:focus {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4);
   opacity: .75;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4);
 }
 
 .button.success.flat {
-  background-color: transparent;
   color: #3DCC7E;
+  background-color: transparent;
   box-shadow: none;
 }
 
@@ -1249,18 +1237,18 @@ label {
 }
 
 .button.danger {
-  background-color: #F44336;
   color: #fff;
+  background-color: #F44336;
 }
 
 .button.danger.active, .button.danger:active, .button.danger:focus {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4);
   opacity: .75;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4);
 }
 
 .button.danger.flat {
-  background-color: transparent;
   color: #F44336;
+  background-color: transparent;
   box-shadow: none;
 }
 
@@ -1269,18 +1257,18 @@ label {
 }
 
 .button.dark {
-  background-color: #444;
   color: #fff;
+  background-color: #444;
 }
 
 .button.dark.active, .button.dark:active, .button.dark:focus {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4);
   opacity: .75;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4);
 }
 
 .button.dark.flat {
-  background-color: transparent;
   color: #444;
+  background-color: transparent;
   box-shadow: none;
 }
 
@@ -1289,18 +1277,18 @@ label {
 }
 
 .button.white {
-  background-color: #fff;
   color: #111;
+  background-color: #fff;
 }
 
 .button.white.active, .button.white:active, .button.white:focus {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4);
   opacity: .75;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4);
 }
 
 .button.white.flat {
-  background-color: transparent;
   color: #fff;
+  background-color: transparent;
   box-shadow: none;
 }
 
@@ -1313,34 +1301,34 @@ label {
 }
 
 .well.dark {
-  background-color: #353030;
   border-color: #e3e3e3;
+  background-color: #353030;
   color: #fff;
 }
 
 .well.primary {
-  background-color: #d9edf7;
   border-color: #bcdff1;
+  background-color: #d9edf7;
 }
 
 .well.danger {
-  background-color: #f2dede;
   border-color: #e3e3e3;
+  background-color: #f2dede;
 }
 
 .well.success {
-  background-color: #dff0d8;
   border-color: #d0e9c6;
+  background-color: #dff0d8;
 }
 
 .well {
   min-height: 1.8rem;
-  padding: 1.85rem;
   margin-bottom: 2rem;
+  padding: 1.85rem;
   color: #333;
-  background-color: #f5f5f5;
   border: 1px solid #e3e3e3;
   border-radius: 0;
+  background-color: #f5f5f5;
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
 }
 
@@ -1357,39 +1345,39 @@ label {
 }
 
 .list-group {
+  margin: 0 0 1rem;
   padding-left: 0;
   list-style: none;
-  margin: 0 0 1rem;
 }
 
 .list-group .item {
   position: relative;
   display: block;
-  padding: 1rem 1.5rem;
   margin-bottom: -1px;
-  background-color: #fff;
+  padding: 1rem 1.5rem;
   border: 1px solid #ddd;
+  background-color: #fff;
 }
 
 .list-group .item > .badge {
-  float: right;
-  display: inline-block;
-  min-width: 1rem;
-  padding: 0.3rem 0.7rem;
-  font-size: 1.2rem;
+  font-size: 12px;
   font-weight: 700;
   line-height: 1;
-  color: #fff;
+  display: inline-block;
+  float: right;
+  min-width: 1rem;
+  padding: .3rem .7rem;
   text-align: center;
-  white-space: nowrap;
   vertical-align: middle;
-  background-color: #908D8D;
+  white-space: nowrap;
+  color: #fff;
   border-radius: 10px;
+  background-color: #908d8d;
 }
 
 .list-group .item.active, .list-group .item.active:focus, .list-group .item.active:hover {
-  background-color: #1077CF;
   color: #fff;
+  background-color: #1077CF;
 }
 
 .list-group.radius .item:first-child {
@@ -1398,16 +1386,16 @@ label {
 }
 
 .list-group.radius .item:last-child {
-  border-bottom-left-radius: 4px;
   border-bottom-right-radius: 4px;
+  border-bottom-left-radius: 4px;
 }
 
 .list-group a.item:focus,
 .list-group a.item:hover,
 .list-group button.item:focus,
 .list-group button.item:hover {
-  color: #555;
   text-decoration: none;
+  color: #555;
   background-color: #f5f5f5;
 }
 
@@ -1416,19 +1404,19 @@ label {
 }
 
 .card {
-  padding: 15px;
   margin-bottom: 20px;
+  padding: 15px;
   border-radius: 0;
-  background-color: #FFF;
+  background-color: #fff;
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16), 0 0 2px 0 rgba(0, 0, 0, 0.12);
 }
 
 .panel {
   margin-bottom: 2rem;
-  background-color: #fff;
   border: 1px solid transparent;
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
   border-color: #ddd;
+  background-color: #fff;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
 }
 
 .panel.radius {
@@ -1447,36 +1435,36 @@ label {
 
 .panel-heading {
   padding: 1rem 1.5rem;
-  border-bottom: 1px solid transparent;
   color: #333;
-  background-color: #f5f5f5;
   border-color: #ddd;
+  border-bottom: 1px solid transparent;
+  background-color: #f5f5f5;
 }
 
 .panel-body {
-  padding: 15px;
+  padding: 1.5rem;
 }
 
 .panel-footer {
   padding: 1rem 1.5rem;
-  background-color: #f5f5f5;
   border-top: 1px solid #ddd;
+  background-color: #f5f5f5;
 }
 
 .panel-title {
+  font-size: 14px;
   margin-top: 0;
   margin-bottom: 0;
-  font-size: 1.4rem;
   color: inherit;
 }
 
 .tabs {
-  list-style: none;
-  padding-left: 0;
-  margin-bottom: 0;
-  background-color: transparent;
-  white-space: nowrap;
   overflow-x: auto;
+  margin-bottom: 0;
+  padding-left: 0;
+  list-style: none;
+  white-space: nowrap;
+  background-color: transparent;
 }
 
 .tabs > li {
@@ -1484,28 +1472,28 @@ label {
 }
 
 .tabs > li > a {
-  display: block;
-  white-space: nowrap;
-  text-transform: uppercase;
+  font-size: 14px;
   font-weight: 500;
-  font-size: 1.4rem;
-  color: rgba(0, 0, 0, 0.87);
-  height: 5rem;
   line-height: 5rem;
-  padding-left: 2.5rem;
+  display: block;
+  height: 5rem;
   padding-right: 2.5rem;
+  padding-left: 2.5rem;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
+  white-space: nowrap;
+  text-transform: uppercase;
+  color: rgba(0, 0, 0, 0.87);
 }
 
 .tabs > li.active {
-  border-bottom: 2px solid #2196F3;
+  border-bottom: 2px solid #2196f3;
 }
 
 .tabs > li.active > a {
-  color: #2196F3;
+  color: #2196f3;
 }
 
 .tabs.justified {

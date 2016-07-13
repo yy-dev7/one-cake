@@ -2,13 +2,13 @@ $button-radius: 3px;
 $button-box-shadow: 0 1.8px 5px 0 rgba(0, 0, 0, .26);
 $button-padding-horizontal-default: 2.2rem;
 $button-padding-vertical-default: 1rem;
-$button-fontsize-default: 1.5rem;
+$button-fontsize-default: 15px;
 $button-padding-horizontal-sm: 1.8rem;
 $button-padding-vertical-sm: .8rem;
-$button-fontsize-sm: 1.25rem;
+$button-fontsize-sm: 12px;
 $button-padding-horizontal-large: 2.6rem;
 $button-padding-vertical-large: 1.375rem;
-$button-fontsize-large: 1.8rem;
+$button-fontsize-large: 18px;
 
 @mixin button-bg-color($bg-color, $color: #fff) {
     color: $color;
